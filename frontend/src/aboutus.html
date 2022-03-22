@@ -28,8 +28,8 @@
                 <div class="photo6Text"></div></div>
                 <div class="photo1OuterBG">
                   <div class="photo1BottomImage"></div>
-                  <span class="photo1BottomBG">Jade Wing Ki Au</span>
-                  <div class="photo1Text"></div></div>
+                  <span class="photo1Text">Jade Wing Ki Au</span>
+                  <div class="photo1BottomBG"></div></div>
                   <div class="name"></div>
                   <div class="v22_136">
                     <div class="v22_137"></div>
@@ -83,23 +83,45 @@
       opacity: 1;
       text-align: left;
     }
-    .photo4OuterBG {
-      width: 243px;
-      height: 320px;
+    .photo1OuterBG {
+      width: 242px;
+      height: 322px;
       background: url("./login-logo.svg");
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
       opacity: 1;
       position: absolute;
-      top: 578px;
+      top: 190px;
       left: 154px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       overflow: hidden;
     }
-    .photo4BottomImage {
+    .photo1BottomImage {
       width: 242px;
-      height: 263px;
-      background: url("noimage");
+      height: 65px;
+      background: rgba(123,162,222,1);
+      opacity: 1;
+      position: absolute;
+      top: 256px;
+      left: 0px;
+    }
+    .photo1Text {
+      width: 136px;
+      color: rgba(255,255,255,1);
+      position: absolute;
+      top: 264px;
+      left: 52px;
+      font-family: Radley;
+      font-weight: Regular;
+      font-size: 19px;
+      opacity: 1;
+      text-align: center;
+    }
+    .photo1BottomBG {
+      width: 242px;
+      height: 256px;
+      /*background: url("../images/photo1BottomBG.png");*/
       background-repeat: no-repeat;
       background-position: center center;
       background-size: cover;
@@ -110,28 +132,6 @@
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       overflow: hidden;
-    }
-    .photo4BottomBG {
-      width: 243px;
-      height: 57px;
-      background: rgba(123,162,222,1);
-      opacity: 1;
-      position: absolute;
-      top: 263px;
-      left: 0px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    }
-    .photo4Text {
-      width: 128px;
-      color: rgba(255,255,255,1);
-      position: absolute;
-      top: 268px;
-      left: 56px;
-      font-family: Radley;
-      font-weight: Regular;
-      font-size: 20px;
-      opacity: 1;
-      text-align: center;
     }
     .photo2OuterBG {
       width: 248px;
@@ -183,56 +183,6 @@
       opacity: 1;
       text-align: center;
     }
-    .photo5OuterBG {
-      width: 245px;
-      height: 320px;
-      background: url("./login-logo.svg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 577px;
-      left: 519px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      overflow: hidden;
-    }
-    .photo5BottomImage {
-      width: 245px;
-      height: 254px;
-      background: url("../images/photo5BottomImage.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      overflow: hidden;
-    }
-    .photo5BottomBG {
-      width: 243px;
-      height: 66px;
-      background: rgba(123,162,222,1);
-      opacity: 1;
-      position: absolute;
-      top: 255px;
-      left: 0px;
-    }
-    .photo5Text {
-      width: 124px;
-      color: rgba(255,255,255,1);
-      position: absolute;
-      top: 260px;
-      left: 60px;
-      font-family: Radley;
-      font-weight: Regular;
-      font-size: 20px;
-      opacity: 1;
-      text-align: left;
-    }
     .photo3OuterBG {
       width: 251px;
       height: 325px;
@@ -283,6 +233,108 @@
       opacity: 1;
       text-align: center;
     }
+    .photo4OuterBG {
+      width: 243px;
+      height: 320px;
+      background: url("./login-logo.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 578px;
+      left: 154px;
+      overflow: hidden;
+    }
+    .photo4BottomImage {
+      width: 242px;
+      height: 263px;
+      background: url("noimage");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      overflow: hidden;
+    }
+    .photo4BottomBG {
+      width: 243px;
+      height: 57px;
+      background: rgba(123,162,222,1);
+      opacity: 1;
+      position: absolute;
+      top: 263px;
+      left: 0px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+    .photo4Text {
+      width: 128px;
+      color: rgba(255,255,255,1);
+      position: absolute;
+      top: 268px;
+      left: 56px;
+      font-family: Radley;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: center;
+    }
+    
+    .photo5OuterBG {
+      width: 245px;
+      height: 320px;
+      background: url("./login-logo.svg");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 577px;
+      left: 519px;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+    .photo5BottomImage {
+      width: 245px;
+      height: 254px;
+      background: url("../images/photo5BottomImage.png");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      opacity: 1;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      overflow: hidden;
+    }
+    .photo5BottomBG {
+      width: 243px;
+      height: 66px;
+      background: rgba(123,162,222,1);
+      opacity: 1;
+      position: absolute;
+      top: 255px;
+      left: 0px;
+    }
+    .photo5Text {
+      width: 124px;
+      color: rgba(255,255,255,1);
+      position: absolute;
+      top: 260px;
+      left: 60px;
+      font-family: Radley;
+      font-weight: Regular;
+      font-size: 20px;
+      opacity: 1;
+      text-align: left;
+    }
+    
     .photo6OuterBG {
       width: 248px;
       height: 320px;
@@ -333,56 +385,7 @@
       border-top-right-radius: 10px;
       overflow: hidden;
     }
-    .photo1OuterBG {
-      width: 242px;
-      height: 322px;
-      background: url("./login-logo.svg");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 190px;
-      left: 154px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-      overflow: hidden;
-    }
-    .photo1BottomImage {
-      width: 242px;
-      height: 65px;
-      background: rgba(123,162,222,1);
-      opacity: 1;
-      position: absolute;
-      top: 256px;
-      left: 0px;
-    }
-    .photo1BottomBG {
-      width: 136px;
-      color: rgba(255,255,255,1);
-      position: absolute;
-      top: 264px;
-      left: 52px;
-      font-family: Radley;
-      font-weight: Regular;
-      font-size: 20px;
-      opacity: 1;
-      text-align: center;
-    }
-    .photo1Text {
-      width: 242px;
-      height: 256px;
-      background: url("../images/photo1Text.png");
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover;
-      opacity: 1;
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      overflow: hidden;
-    }
+    
     .name {
       color: #fff;
     }
