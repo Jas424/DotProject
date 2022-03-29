@@ -1,4 +1,4 @@
-import MemberCard from "../components/MemberCard";
+import TeamMemberCard from "../components/TeamMemberCard";
 
 import genericMalePhoto from "../components/genericMale.png";
 import genericFemalePhoto from "../components/genericFemale.png";
@@ -11,27 +11,33 @@ function AboutUsPage() {
       </center>
       <div class="flexbox-container">
         <div>
-          <MemberCard text="Agenor Rodriguez" teamPhoto={genericMalePhoto} />
+          <TeamMemberCard
+            text="Agenor Rodriguez"
+            teamPhoto={genericMalePhoto}
+          />
         </div>
 
         <div>
-          <MemberCard text="Jade Wing Ki Au" teamPhoto={genericFemalePhoto} />
+          <TeamMemberCard
+            text="Jade Wing Ki Au"
+            teamPhoto={genericFemalePhoto}
+          />
         </div>
 
         <div>
-          <MemberCard text="Jaspreet Singh" teamPhoto={genericMalePhoto} />
+          <TeamMemberCard text="Jaspreet Singh" teamPhoto={genericMalePhoto} />
         </div>
 
         <div>
-          <MemberCard text="Jonathan Yanez" teamPhoto={genericMalePhoto} />
+          <TeamMemberCard text="Jonathan Yanez" teamPhoto={genericMalePhoto} />
         </div>
 
         <div>
-          <MemberCard text="Jiten Lama" teamPhoto={genericMalePhoto} />
+          <TeamMemberCard text="Jiten Lama" teamPhoto={genericMalePhoto} />
         </div>
 
         <div>
-          <MemberCard text="Henry Nguyen" teamPhoto={genericMalePhoto} />
+          <TeamMemberCard text="Henry Nguyen" teamPhoto={genericMalePhoto} />
         </div>
       </div>
     </div>

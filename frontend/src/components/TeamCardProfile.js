@@ -1,4 +1,4 @@
-function Modal(props) {
+function TeamCardProfile(props) {
   function cancelHandler() {
     props.onCancel();
   }
@@ -6,7 +6,7 @@ function Modal(props) {
     props.onConfirm();
   }
   return (
-    <div className="modal">
+    <div className="TeamCardProfile">
       <p>{props.aboutMe}</p>
       <center>
         <button className="btn" onClick={confirmHandler}>
@@ -18,7 +18,7 @@ function Modal(props) {
 }
 
 /*return (
-    <div className="modal">
+    <div className="TeamCardProfile">
       <p>Are you sure?</p>
       <button className="btn btn--alt" onClick={props.onCancel}>
         Cancel
@@ -30,4 +30,4 @@ function Modal(props) {
   );
 }*/
 
-export default Modal;
+export default TeamCardProfile;

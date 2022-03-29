@@ -1,19 +1,19 @@
 import { useState } from "react";
 
-import Modal from "./Modal";
+import TeamCardProfile from "./TeamCardProfile";
 import Backdrop from "./Backdrop";
 
-function MemberCard(props) {
-  const [modalIsOpen, setModalIsOpen] = useState(false);
+function TeamMemberCard(props) {
+  const [TeamCardProfileIsOpen, setTeamCardProfileIsOpen] = useState(false);
 
   function deleteHandler() {
-    setModalIsOpen(true);
+    setTeamCardProfileIsOpen(true);
     /*console.Clicked!");
     console.log(props.text);*/
   }
 
-  function closeModalHandler() {
-    setModalIsOpen(false);
+  function closeTeamCardProfileHandler() {
+    setTeamCardProfileIsOpen(false);
   }
 
   return (
@@ -28,14 +28,14 @@ function MemberCard(props) {
             Learn More
           </button>
         </div>
-        {modalIsOpen && (
-          <Modal
+        {TeamCardProfileIsOpen && (
+          <TeamCardProfile
             aboutMe={
               "FirstName LastName is JobTitle at Dot. They are from HomeTown and were born in BirthYear."
             }
             /*aboutMe={aboutMeHandler}*/
-            onCancel={closeModalHandler}
-            onConfirm={closeModalHandler}
+            onCancel={closeTeamCardProfileHandler}
+            onConfirm={closeTeamCardProfileHandler}
           />
         )}
       </div>
@@ -44,7 +44,7 @@ function MemberCard(props) {
 }
 
 /* This will be used later to open a back drop when "LEARN MORE" button is clicked"
-{modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
+{TeamCardProfileIsOpen && <Backdrop onCancel={closeTeamCardProfileHandler} />}
 */
 
-export default MemberCard;
+export default TeamMemberCard;
