@@ -1,24 +1,23 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Helloworld from "./Helloworld";
+import { Route } from "react-router-dom";
+import { Routes } from "react-router-dom";
+
+import HomePage from "./pages/HomePage";
+import FavoritePostsPage from "./pages/FavoritePosts";
+import NewPostsPage from "./pages/NewPosts";
+import AboutUsPage from "./pages/AboutUsPage";
+
+import MainNavigation from "./components/layout/MainNavigation";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        Build Your Profile
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="./login.html"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Sign In
-        </a>
-      </header>
+    <div>
+      <MainNavigation />
+      <Routes>
+        <Route path="/" element={<AboutUsPage />} exact />
+        <Route path="/newposts" element={<NewPostsPage />} />
+        <Route path="/favoriteposts" element={<FavoritePostsPage />} />
+        <Route path="/homepage" element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
