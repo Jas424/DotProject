@@ -17,10 +17,10 @@ function MainNavigation() {
             <Link to="/">ABOUT US</Link>
           </li>
           <li>
-            <Link to="/newposts">SIGN UP</Link>
+            <Link to="/signup">SIGN UP</Link>
           </li>
           <li>
-            <Link to="/favoriteposts">LOG IN</Link>
+            <Link to="/login">LOG IN</Link>
           </li>
           <li>
             <Link to="/aboutus">HOME PAGE</Link>
