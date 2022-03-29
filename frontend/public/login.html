@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Radley&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="pageBG">
+      <div class="formOuterBG"></div>
+      <div class="formInnerBG">
+        <div class="formLogoOuterBG">
+          <div class="formLogoWhiteCircle"></div>
+          <div class="formRectangleBorder">
+            <div class="formLogoHead"></div>
+            <div class="formLogoBody"></div>
+          </div>
+        </div>
+        <!--<div class="emailButtonGreenBG">
+          <div class="emailButtonBGRound"></div>-->
+          <div class="emailButtonGreenBG">
+            <form>
+              <!--<label for="email">email address2</label><br>-->
+              <input class="emailButtonBGRound" type="text" id="email" name="email" placeholder="email address"><br>
+          </div>
+          <!--<span class="emailText">email address</span>
+        </div>-->
+        <!--<div class="passwordButtonGreenBG">
+          <div class="passwordButtonWhiteBGRound"></div>-->
+        <div class="passwordButtonGreenBG">
+            <input class="passwordButtonWhiteBGRound" type="password" id="password" name="password" placeholder="password"><br>
+            </div>
+          <!--<span class="passwordText">password </span>
+        </div>-->
+        <a href="./login.html">
+        <div class="loginButtonGreenBG">
+          <div class="loginButtonWhiteBGRound"></div>
+          <span class="loginButtonText">Log in</span>
+
+          <div class="loginButtonSmallSquare">
+            <div class="name"></div>
+            <div class="name"></div>
+          </div>
+        </div>
+        </a>
+        <a href="./resetPassword.html"><div class="resetButtonGreenBG">
+          <div class="resetButtonWhiteBGRound"></div>
+          <span class="resetButtonText">Reset Password</span>
+          <div class="resetButtonSmallSquare">
+            <div class="name"></div>
+            <div class="name"></div>
+          </div>
+        </div>
+        </a>
+        <a href="./aboutus.html"><div class="googleButtonGreenBG">
+          <div class="googleButtonWhiteBGRounded"></div>
+          <span class="googleButtonText">Google</span>
+          <div class="googleButtonSmallSquare">
+            <div class="name"></div>
+            <div class="name"></div>
+          </div>
+        </a>
+        </div>
+        <a href="./forgotPassword.html"><span class="forgotPasswordLink">Forget Password?</span></a>
+      </div>
+    </div>
+  </body>
+</html>
+<br /><br />
+<style>
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    font-size: 14px;
+  }
+  .pageBG {
+    width: 100%;
+    height: 1024px;
+    background: aaaa;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .formOuterBG {
+    width: 881px;
+    height: 906px;
+    background: rgba(171, 215, 207, 1);
+    opacity: 1;
+    position: absolute;
+    top: 59px;
+    left: 279px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+  }
+  .formInnerBG {
+    width: 416px;
+    height: 802px;
+    background: url("../images/formInnerBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 96px;
+    left: 512px;
+    overflow: hidden;
+  }
+  .formLogoOuterBG {
+    width: 416px;
+    height: 416px;
+    background: url("../images/formLogoOuterBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+  }
+  .formLogoWhiteCircle {
+    width: 416px;
+    height: 416px;
+    background: rgba(255, 255, 255, 1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-radius: 50%;
+  }
+  .formRectangleBorder {
+    width: 189px;
+    height: 277px;
+    background: url("../images/formRectangleBorder.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 69px;
+    left: 114px;
+    overflow: hidden;
+  }
+  .formLogoHead {
+    width: 158px;
+    height: 158px;
+    background: rgba(128, 128, 128, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 16px;
+    border-radius: 50%;
+  }
+  .formLogoBody {
+    width: 189px;
+    height: 189px;
+    background: rgba(128, 128, 128, 1);
+    opacity: 1;
+    position: absolute;
+    top: 87px;
+    left: 0px;
+  }
+  .emailButtonGreenBG {
+    width: 393px;
+    height: 40px;
+    background: url("../images/emailButtonGreenBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 462px;
+    left: 12px;
+    overflow: hidden;
+    border: 0px;
+  }
+  .emailButtonBGRound {
+    width: 393px;
+    height: 40px;
+    background: rgba(238, 238, 238, 1);
+    opacity: 1;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    border-color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+  }
+  .emailText {
+    width: 94px;
+    color: rgba(84, 84, 84, 1);
+    position: absolute;
+    top: 11px;
+    left: 9px;
+    font-family: Roboto;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .passwordButtonGreenBG {
+    width: 393px;
+    height: 40px;
+    background: url("../images/passwordButtonGreenBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 532px;
+    left: 12px;
+    overflow: hidden;
+  }
+  .passwordButtonWhiteBGRound {
+    width: 393px;
+    height: 40px;
+    background: rgba(238, 238, 238, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+  }
+  .passwordText {
+    width: 66px;
+    color: rgba(84, 84, 84, 1);
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    font-family: Roboto;
+    font-weight: Regular;
+    font-size: 15px;
+    opacity: 1;
+    text-align: left;
+  }
+  .loginButtonGreenBG {
+    width: 151px;
+    height: 45px;
+    background: url("../images/loginButtonGreenBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 620px;
+    left: 233px;
+    overflow: hidden;
+  }
+  .loginButtonWhiteBGRound {
+    width: 151px;
+    height: 45px;
+    background: rgba(53, 182, 151, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+  }
+  .loginButtonText {
+    width: 68px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 8px;
+    left: 41px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.30000001192092896);
+    font-family: Radley;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  .loginButtonSmallSquare {
+    width: 7px;
+    height: 11px;
+    background: url("../images/loginButtonSmallSquare.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: 115px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .resetButtonGreenBG {
+    width: 216px;
+    height: 45px;
+    background: url("../images/resetButtonGreenBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 756px;
+    left: 100px;
+    overflow: hidden;
+  }
+  .resetButtonWhiteBGRound {
+    width: 216px;
+    height: 45px;
+    background: url("../images/resetButtonWhiteBGRound.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border: 3px solid rgba(37, 143, 117, 1);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+  }
+  .resetButtonText {
+    width: 136px;
+    color: rgba(37, 143, 117, 1);
+    position: absolute;
+    top: 9px;
+    left: 31px;
+    font-family: Radley;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  .resetButtonSmallSquare {
+    width: 10px;
+    height: 11px;
+    background: url("../images/resetButtonSmallSquare.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 16px;
+    left: 181px;
+    overflow: hidden;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .googleButtonGreenBG {
+    width: 151px;
+    height: 45px;
+    background: url("../images/googleButtonGreenBG.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 620px;
+    left: 33px;
+    overflow: hidden;
+  }
+  .googleButtonWhiteBGRounded {
+    width: 151px;
+    height: 45px;
+    background: rgba(37, 143, 117, 1);
+    opacity: 1;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    overflow: hidden;
+  }
+  .googleButtonText {
+    width: 68px;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    top: 10px;
+    left: 41px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.30000001192092896);
+    font-family: Radley;
+    font-weight: Regular;
+    font-size: 20px;
+    opacity: 1;
+    text-align: left;
+  }
+  .googleButtonSmallSquare {
+    width: 7px;
+    height: 11px;
+    background: url("../images/googleButtonSmallSquare.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: 115px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+  }
+  .name {
+    color: #fff;
+  }
+  .name {
+    color: #fff;
+  }
+  .forgotPasswordLink {
+    width: 136px;
+    color: rgba(73, 71, 71, 1);
+    position: absolute;
+    top: 705px;
+    left: 139px;
+    font-family: Radley;
+    font-weight: Regular;
+    font-size: 18px;
+    opacity: 1;
+    text-align: center;
+  }
+</style>
