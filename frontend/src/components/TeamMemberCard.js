@@ -1,12 +1,23 @@
 /* a custom react component that looks like a playing card and contains each team member's "about me" information */
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import TeamCardProfile from "./TeamCardProfile";
 import Backdrop from "./Backdrop";
 
 function TeamMemberCard(props) {
   const [TeamCardProfileIsOpen, setTeamCardProfileIsOpen] = useState(false);
+  useEffect(() => {
+    fetch("https://randomuser.me/api/")
+      /* .then(handleErrors)*/
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   function deleteHandler() {
     setTeamCardProfileIsOpen(true);
