@@ -34,7 +34,7 @@ function TeamMemberCard(props) {
       <div className="photoContainer">
         <img className="memberPhoto" src={props.teamPhoto}></img>
         <h2>
-          <center>{props.text}</center>
+          <center>{props.fullName}</center>
         </h2>
         <div className="actions">
           <button className="btn" onClick={deleteHandler}>
