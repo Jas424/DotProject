@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-import TeamCardProfile from "./TeamCardProfile";
-
-import { Profile } from "./Profile";
+import UserCardProfile from "./UserCardProfile";
 
 function UserCard(props) {
   const [UserCardProfileIsOpen, setUserCardProfileIsOpen] = useState(false);
@@ -21,27 +19,35 @@ function UserCard(props) {
 
   return (
     <div className="card">
+      <div className="userName" />
+      <h2>
+        <center>{props.fullName}</center>
+      </h2>
       <div className="photoContainer">
-        <img className="userPhoto" src={props.userPhoto} alt="dot user"></img>
-        <div className="userName" />
-        <h2>
-          <center>{Profile.fullname}</center>
-        </h2>
-        </div>
+        <center>
+          <img className="userPhoto" src={props.userPhoto} alt="dot user"></img>
+        </center>
+      </div>
+
+      <div className="hometown">
+        <center>
+          <h2>Hometown</h2>
+        </center>
+
         <div className="actions">
           <button className="btn" onClick={deleteHandler}>
             Learn More
           </button>
         </div>
-        {UserCardProfileIsOpen && (
-          <UserCardProfile
-            aboutMe={"This is my user profile"}
-            /*aboutMe={aboutMeHandler}*/
-            onCancel={closeUserCardProfileHandler}
-            onConfirm={closeUserCardProfileHandler}
-          />
-        )}
       </div>
+      {UserCardProfileIsOpen && (
+        <UserCardProfile
+          aboutMe={"This is my user profile"}
+          /*aboutMe={aboutMeHandler}*/
+          onCancel={closeUserCardProfileHandler}
+          onConfirm={closeUserCardProfileHandler}
+        />
+      )}
     </div>
   );
 }

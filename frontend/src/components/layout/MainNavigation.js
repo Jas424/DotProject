@@ -8,13 +8,19 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <img className={classes.dotSmallLogo} src={dotSmallLogo} /> DOT{" "}
-        <font size="3">dating app</font>
+        <Link to="/homepage">
+          <img
+            className={classes.dotSmallLogo}
+            src={dotSmallLogo}
+            alt="dot-small-logo"
+          />{" "}
+          DOT <font size="3">dating app</font>
+        </Link>
       </div>
       <nav>
         <ul>
           <li>
-            <Link to="/">ABOUT US</Link>
+            <Link to="/aboutus">ABOUT US</Link>
           </li>
           <li>
             <Link to="/signup">SIGN UP</Link>
@@ -23,7 +29,7 @@ function MainNavigation() {
             <Link to="/login">LOG IN</Link>
           </li>
           <li>
-            <Link to="/aboutus">HOME PAGE</Link>
+            <Link to="/homepage">HOME PAGE</Link>
           </li>
         </ul>
       </nav>
