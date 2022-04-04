@@ -20,6 +20,9 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
+            <Link to="/codelab">CODE LAB</Link>
+          </li>
+          <li>
             <Link to="/aboutus">ABOUT US</Link>
           </li>
           <li>

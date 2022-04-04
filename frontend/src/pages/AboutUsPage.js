@@ -11,7 +11,7 @@ function AboutUsPage() {
       <center>
         <h1>MEET THE DOT TEAM</h1>
       </center>
-      <div class="flexbox-container">
+      <div className="flexbox-container">
         <div>
           <TeamMemberCard
             fullName="Agenor Rodriguez"
