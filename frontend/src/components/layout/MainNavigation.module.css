@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@200&display=swap');
 
 
 .header {
@@ -7,13 +9,19 @@
   align-items: center;
   justify-content: space-between;
   background-color: rgba(43, 140, 129, 255);
-  padding: 0 10%;
+  padding: auto;
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
+  font-family: 'Catamaran', sans-serif;
+  
 }
 
-.logo {
+.logo  {
   font-size: 2rem;
   color: white;
   font-weight: bold;
+  font-family: 'Fredoka One' !important; 
+  
+
 }
 
 .header ul {
@@ -25,7 +33,7 @@
 }
 
 .header li {
-  margin-left: 3rem;
+  margin-left: 6rem;
 }
 
  /* Creates hover animation on Navigation Links*/
@@ -36,7 +44,7 @@ header a {
   display: block; 
   width: 100%; 
   padding: 12px; 
-  border-left: 5px solid; 
+  
   position: relative; 
   z-index: 2;
   text-decoration: none;
@@ -44,6 +52,7 @@ header a {
   box-sizing: border-box;  
   -moz-box-sizing: border-box;  
   -webkit-box-sizing: border-box; 
+  /*font-family: 'Catamaran', sans-serif;*/
 }
 
 
@@ -96,6 +105,7 @@ nav li a:after {
 }
 
 .dotSmallLogo {
-  height: 2rem;
-  width: 2rem;
+  height: 2.2rem;
+  width: 2.2rem;
+  
 }
