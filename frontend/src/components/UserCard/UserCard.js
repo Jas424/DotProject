@@ -18,7 +18,7 @@ function UserCard(props) {
   }
 
   return (
-    <div className="card">
+    <div className="aboutUsCard">
       <div className="userName" />
       <h2>
         <center>{props.fullName}</center>
@@ -29,17 +29,6 @@ function UserCard(props) {
         </center>
       </div>
 
-      <div className="hometown">
-        <center>
-          <h2>Hometown</h2>
-        </center>
-
-        <div className="actions">
-          <button className="btn" onClick={deleteHandler}>
-            Learn More
-          </button>
-        </div>
-      </div>
       {UserCardProfileIsOpen && (
         <UserCardProfile
           aboutMe={"This is my user profile"}

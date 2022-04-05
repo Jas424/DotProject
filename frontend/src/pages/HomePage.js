@@ -1,6 +1,6 @@
 import UserCard from "../components/UserCard/UserCard";
 
-import userProfile from "../components/genericMale2.jpg";
+import userProfile from "../components/images/genericMale2.jpg";
 
 function HomePage() {
   return (
