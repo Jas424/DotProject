@@ -2,8 +2,8 @@ import TeamMemberCard from "../components/TeamCard/TeamMemberCard";
 
 import UserCard from "../components/UserCard/UserCard";
 
-import genericMalePhoto from "../components/genericMale.png";
-import genericFemalePhoto from "../components/genericFemale.png";
+import genericMalePhoto from "../components/images/genericMale.png";
+import genericFemalePhoto from "../components/images/genericFemale.png";
 
 function AboutUsPage() {
   return (

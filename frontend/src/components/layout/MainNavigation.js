@@ -32,6 +32,9 @@ function MainNavigation() {
             <Link to="/login">LOG IN</Link>
           </li>
           <li>
+            <Link to="/explore">EXPLORE</Link>
+          </li>
+          <li>
             <Link to="/homepage">HOME PAGE</Link>
           </li>
         </ul>
