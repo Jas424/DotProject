@@ -1,6 +1,10 @@
 import SignupPage from "./SignupPage";
 
+import { useNavigate } from "react-router-dom";
+
 function ExplorePage() {
+  const navigate = useNavigate();
+
   function addNewUserHandler(newUserData) {
     fetch("https://dot-project-f73b1-default-rtdb.firebaseio.com/users.json", {
       method: "POST",
@@ -8,19 +12,18 @@ function ExplorePage() {
       headers: {
         "Content-type": "application/json",
       },
+    }).then(() => {
+      navigate("/");
     });
   }
   return (
-    <div>
-      <div>
-        <center>
-          <h1>EXPLORE OTHER DOT USERS!</h1>
-        </center>
-      </div>
-      <div>
-        <SignupPage onAddUser={addNewUserHandler} />
-      </div>
-    </div>
+    <section>
+      <center>
+        <h1>EXPLORE OTHER DOT USERS!</h1>
+      </center>
+
+      <SignupPage onAddUser={addNewUserHandler} />
+    </section>
   );
 }
 export default ExplorePage;
