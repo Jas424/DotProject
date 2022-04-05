@@ -38,6 +38,9 @@ function MainNavigation() {
             <Link to="/explore">EXPLORE</Link>
           </li>
           <li>
+            <Link to="/explore">MESSAGES</Link>
+          </li>
+          <li>
             <Link to="/homepage">HOME PAGE</Link>
           </li>
         </ul>
