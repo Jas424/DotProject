@@ -9,7 +9,7 @@ function AboutUsPage() {
   return (
     <div>
       <center>
-        <h1>MEET THE DOT TEAM</h1>
+        <h1>Meet The Dot Team</h1>
       </center>
       <div className="flexbox-container">
         <div>
