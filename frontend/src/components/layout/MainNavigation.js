@@ -14,7 +14,10 @@ function MainNavigation() {
             src={dotSmallLogo}
             alt="dot-small-logo"
           />{" "}
-          DOT <font size="3">dating app</font>
+          DOT <font size="3"> </font>
+          <font size="1">Dating App</font>
+     
+
         </Link>
       </div>
       <nav>
