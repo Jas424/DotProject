@@ -16,8 +16,6 @@ function MainNavigation() {
           />{" "}
           DOT <font size="3"> </font>
           <font size="1">Dating App</font>
-     
-
         </Link>
       </div>
       <nav>
@@ -37,9 +35,7 @@ function MainNavigation() {
           <li>
             <Link to="/explore">EXPLORE</Link>
           </li>
-          <li>
-            <Link to="/explore">MESSAGES</Link>
-          </li>
+
           <li>
             <Link to="/homepage">HOME PAGE</Link>
           </li>
