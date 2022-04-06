@@ -28,7 +28,7 @@ function SignupPage(props) {
       password: enteredPassword,
       intro: enteredIntro,
     };
-
+    console.log(event.target);
     props.onAddUser(newUserData);
   }
   return (

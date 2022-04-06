@@ -21,7 +21,6 @@ function App() {
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/codelab" element={<CodeLabPage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/messages" element={<MessagesPage />} />
       </Routes>
     </div>
   );
