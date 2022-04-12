@@ -1,17 +1,36 @@
-import React, { useRef } from "react";
-import { Form, Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import React, { useRef, useState } from "react";
+import { Alert, Button, Card, Form } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function LoginForm() {
+function LoginForm() {
   const emailRef = useRef();
   const passwordRef = useRef();
+  const { login } = useAuth();
+  const [error, setError] = useState();
+  const [loading, setLoading] = useState(false);
+  const history = useNavigate();
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    try {
+      setError("");
+      setLoading(true);
+      await login(emailRef.current.value, passwordRef.current.value);
+      history.push("/dashboard");
+    } catch {
+      setError("Failed to sign in.");
+    }
+    setLoading(false);
+  }
 
   return (
     <>
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">LOG IN</h2>
-          <Form>
+          {error && <Alert variant="danger">{error}</Alert>}
+          <Form onSubmit={handleSubmit}>
             <Form.Group id="email" controlId="formEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -21,13 +40,15 @@ export default function LoginForm() {
                 required
               />
             </Form.Group>
+
             <Form.Group id="password" controlId="formPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
+
             <p></p>
-            <Button className="w-100" type="submit">
-              Log In
+            <Button disabled={loading} className="w-100" type="submit">
+              LOG IN
             </Button>
           </Form>
         </Card.Body>
@@ -39,3 +60,5 @@ export default function LoginForm() {
     </>
   );
 }
+
+export default LoginForm;
