@@ -1,4 +1,4 @@
-/* this component contains all of our environmental variables so that we can change any of them in one place */
+/* this component contains a mapping of our environmental variables so if any of the actual values change  */
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 
