@@ -21,9 +21,9 @@ function MainNavigation() {
       </div>
       <nav>
         <ul>
-          <li>
-            <Link to="/codelab">CODE LAB</Link>
-          </li>
+          {/* <li> */}
+          {/* <Link to="/codelab">CODE LAB</Link> */}
+          {/* </li> */}
           <li>
             <Link to="/aboutus">ABOUT US</Link>
           </li>
@@ -33,9 +33,9 @@ function MainNavigation() {
           <li>
             <Link to="/login">LOG IN</Link>
           </li>
-          <li>
-            <Link to="/explore">EXPLORE</Link>
-          </li>
+          {/* <li> */}
+          {/* <Link to="/explore">EXPLORE</Link> */}
+          {/* </li> */}
 
           <li>
             <Link to="/homepage">HOME PAGE</Link>
