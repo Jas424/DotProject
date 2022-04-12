@@ -40,6 +40,10 @@ function MainNavigation() {
           <li>
             <Link to="/homepage">HOME PAGE</Link>
           </li>
+
+          {/* <li> */}
+          {/* <Link to="/dashboard">DASHBOARD</Link> */}
+          {/* </li> */}
         </ul>
       </nav>
     </header>

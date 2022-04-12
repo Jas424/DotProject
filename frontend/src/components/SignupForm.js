@@ -87,7 +87,9 @@ function SignupForm() {
       {/* className: w-100 = span whole width */}
       {/* className: mt-2 = margin top spacing */}
       <div className="w-100 text-center mt-2">
-        <Link to="/login">ALREADY HAVE AN ACCOUNT? LOG IN HERE</Link>
+        <Link to="/login">
+          <Alert>ALREADY HAVE AN ACCOUNT? LOG IN HERE</Alert>
+        </Link>
       </div>
     </>
   );

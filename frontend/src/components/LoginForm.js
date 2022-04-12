@@ -55,7 +55,9 @@ function LoginForm() {
       </Card>
 
       <div className="w-100 text-center mt-2">
-        <Link to="/signup">DON'T HAVE AN ACCOUNT? SIGN UP HERE</Link>
+        <Link to="/signup">
+          <Alert>DON'T HAVE AN ACCOUNT? SIGN UP HERE</Alert>
+        </Link>
       </div>
     </>
   );
