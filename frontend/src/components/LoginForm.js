@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Form, Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const emailRef = useRef();
@@ -33,7 +34,7 @@ export default function LoginForm() {
       </Card>
 
       <div className="w-100 text-center mt-2">
-        LOG IN WITH YOUR GOOGLE ACCOUNT
+        <Link to="/signup">DON'T HAVE AN ACCOUNT? SIGN UP HERE</Link>
       </div>
     </>
   );
