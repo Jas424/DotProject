@@ -9,6 +9,7 @@ function SignupPageLoader() {
   return (
     <AuthProvider>
       <Container
+        // classname attribute: flexbox class, vertical align, horizontal align
         className="d-flex align-items-center justify-content-center"
         style={({ minHeight: "100vh" }, { minWidth: "100vh" })}
       >
