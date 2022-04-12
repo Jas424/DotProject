@@ -1,3 +1,4 @@
+/* this component is the navigation bar at the top of the page */
 import { Link } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";

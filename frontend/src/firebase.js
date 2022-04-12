@@ -1,5 +1,6 @@
-import firebase from "firebase/app";
-import "firebase/auth";
+/* this component contains all of our environmental variables so that we can change any of them in one place */
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
 
 const app = firebase.initializeApp({
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,

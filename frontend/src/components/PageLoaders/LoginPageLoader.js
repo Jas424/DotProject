@@ -1,3 +1,4 @@
+/*This component works as a container that will hold the actual contents of the login page. */
 import React from "react";
 import LoginForm from "../LoginForm";
 import { Container } from "react-bootstrap";

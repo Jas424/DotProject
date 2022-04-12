@@ -9,8 +9,6 @@ function UserCard(props) {
 
   function deleteHandler() {
     setUserCardProfileIsOpen(true);
-    /*console.Clicked!");
-    console.log(props.text);*/
   }
 
   function closeUserCardProfileHandler() {
@@ -40,9 +38,5 @@ function UserCard(props) {
     </div>
   );
 }
-
-/* This will be used later to open a back drop when "LEARN MORE" button is clicked"
-{TeamCardProfileIsOpen && <Backdrop onCancel={closeTeamCardProfileHandler} />}
-*/
 
 export default UserCard;
