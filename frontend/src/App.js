@@ -13,7 +13,9 @@ import LoginPageLoader from "./components/PageLoaders/LoginPageLoader";
 function App() {
   return (
     <div>
+      {/* render navigation bar */}
       <MainNavigation />
+      {/* set up routes for navigation bar */}
       <Routes>
         <Route path="/" element={<AboutUsPage />} exact />
         <Route path="/aboutus" element={<AboutUsPage />} exact />
