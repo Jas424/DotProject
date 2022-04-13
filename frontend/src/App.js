@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import AboutUsPage from "./pages/AboutUsPage";
 import CodeLabPage from "./pages/CodeLab";
 import ExplorePage from "./pages/ExplorePage";
+import DashboardPage from "./pages/DashboardPage";
 
 import SignupPageLoader from "./components/PageLoaders/SignupPageLoader";
 import LoginPageLoader from "./components/PageLoaders/LoginPageLoader";
@@ -24,6 +25,7 @@ function App() {
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/codelab" element={<CodeLabPage />} />
         <Route path="/explore" element={<ExplorePage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
       </Routes>
     </div>
   );

@@ -17,9 +17,10 @@ function LoginForm() {
       setError("");
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
+      alert("LOGIN SUCCESSFUL!");
+      history("/dashboard");
     } catch {
-      setError("Failed to sign in.");
+      setError("FAILED TO LOG IN");
     }
     setLoading(false);
   }

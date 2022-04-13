@@ -10,9 +10,9 @@ function SignupForm() {
   const { signup } = useAuth();
 
   // create one state where password and password conf are equal and one where they arent
-  const [error, setError] = useState();
+  const [error, setError] = useState("");
 
-  //set up a state that disables the "Sign up" button while user is signing up
+  //set up a state that disables the "Sign up" button while user is signing up [true state]
   const [loading, setLoading] = useState(false);
 
   // using useNavigate to redirect the user to a particular page when done signing up
@@ -36,9 +36,11 @@ function SignupForm() {
       setLoading(true);
       // call the signup function created in AuthContent and pass in the email and password
       await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/dashboard");
+      alert("ACCOUNT CREATED!");
+      history.push("/createaccount");
     } catch {
-      setError("Failed to create an account.");
+      alert("SIGNUP FAILED!");
+      setError("FAILED TO CREATE AN ACCOUNT");
     }
     // when signup is done, re-enable the signup function
     setLoading(false);
@@ -51,7 +53,6 @@ function SignupForm() {
           <h2 className="text-center mb-4">Sign Up</h2>
           {/* if we have an error, then render an alert */}
           {error && <Alert variant="danger">{error}</Alert>}
-
           {/* begin form */}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" controlId="formEmail">
