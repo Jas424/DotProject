@@ -3,7 +3,7 @@ import { Alert, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
-export default function DashboardPage() {
+function DashboardPage() {
   const [error, setError] = useState("");
   const currentUser = useAuth();
   function handleLogout() {}
@@ -18,7 +18,7 @@ export default function DashboardPage() {
         </Card.Body>
       </Card>
       <div className="w-100 text-center mt-2">
-        <Link to="/signup">
+        <Link to="/login">
           <Button variant="link" onClick={handleLogout}>
             LOG OUT
           </Button>
@@ -27,3 +27,4 @@ export default function DashboardPage() {
     </>
   );
 }
+export default DashboardPage;
