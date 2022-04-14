@@ -1,14 +1,13 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-i
+i;
 
-
-function Signup() {
+function OldSignup() {
   return (
     <div className="sign-up">
-      <h1>Signup Page</h1>
+      <h1>OldSignup Page</h1>
 
-      <form >
+      <form>
         <p>
           <input type="text" placeholder="FullName" name="FullName" />
         </p>
@@ -26,4 +25,4 @@ function Signup() {
   );
 }
 
-export default Signup;
+export default OldSignup;
