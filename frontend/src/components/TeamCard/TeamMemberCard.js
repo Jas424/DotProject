@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import TeamCardProfile from "./TeamCardProfile";
 
+import { Image } from "react-bootstrap";
+
 function TeamMemberCard(props) {
   const [TeamCardProfileIsOpen, setTeamCardProfileIsOpen] = useState(false);
 
@@ -18,7 +20,7 @@ function TeamMemberCard(props) {
   return (
     <div className="card">
       <div className="photoContainer">
-        <img className="memberPhoto" src={props.teamPhoto}></img>
+        <Image className="memberPhoto" src={props.teamPhoto} rounded></Image>
         <h2>
           <center>{props.fullName}</center>
         </h2>

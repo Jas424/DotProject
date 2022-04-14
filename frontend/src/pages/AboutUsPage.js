@@ -43,13 +43,6 @@ function AboutUsPage() {
         <div>
           <TeamMemberCard fullName="Jiten Lama" teamPhoto={genericMalePhoto} />
         </div>
-
-        <div>
-          <TeamMemberCard
-            fullName="Henry Nguyen"
-            teamPhoto={genericMalePhoto}
-          />
-        </div>
       </div>
     </div>
   );
