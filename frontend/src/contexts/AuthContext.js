@@ -28,6 +28,10 @@ export function AuthProvider({ children }) {
     return auth.signOut();
   }
 
+  function resetPassword(email) {
+    return auth.sendPasswordResetEmail(email);
+  }
+
   // we want auth.onAuthStateChanger to only run once when we mount our component so we put it in a useEffect()
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -44,6 +48,7 @@ export function AuthProvider({ children }) {
     login,
     signup,
     logout,
+    resetPassword,
   };
   return (
     <AuthContext.Provider value={value}>
