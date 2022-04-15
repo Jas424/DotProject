@@ -13,6 +13,7 @@ import DashboardPageLoader from "./components/PageLoaders/DashboardPageLoader";
 
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPageLoader";
+import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
 
 function App() {
   return (
@@ -31,6 +32,11 @@ function App() {
         <Route path="/forgotpassword" element={<ForgotPasswordPageLoader />} />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<DashboardPageLoader />} exact />
+          <Route
+            path="/editprofile"
+            element={<EditProfilePageLoader />}
+            exact
+          />
         </Route>
       </Routes>
     </div>

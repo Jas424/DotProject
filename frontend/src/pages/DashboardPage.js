@@ -27,7 +27,7 @@ function DashboardPage() {
             <h2 className="text-center mb-4">PROFILE</h2>
             {error && <Alert variant="danger">{error}</Alert>}
             <strong>Welcome, {currentUser.email}!</strong>
-            <Link to="updateprofile" className="btn btn-primary w-100 mt-3">
+            <Link to="/editprofile" className="btn btn-primary w-100 mt-3">
               <strong>EDIT PROFILE</strong>
             </Link>
           </Card.Body>
