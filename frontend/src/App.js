@@ -11,6 +11,9 @@ import SignupPageLoader from "./components/PageLoaders/SignupPageLoader";
 import LoginPageLoader from "./components/PageLoaders/LoginPageLoader";
 import DashboardPageLoader from "./components/PageLoaders/DashboardPageLoader";
 
+import PrivateRoute from "./components/PrivateRoute";
+import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPageLoader";
+
 function App() {
   return (
     <div>
@@ -25,7 +28,10 @@ function App() {
         <Route path="/homepage" element={<HomePage />} />
         <Route path="/codelab" element={<CodeLabPage />} />
         <Route path="/explore" element={<ExplorePage />} />
-        <Route path="/dashboard" element={<DashboardPageLoader />} />
+        <Route path="/forgotpassword" element={<ForgotPasswordPageLoader />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/dashboard" element={<DashboardPageLoader />} exact />
+        </Route>
       </Routes>
     </div>
   );

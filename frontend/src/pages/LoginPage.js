@@ -9,7 +9,7 @@ function LoginPage() {
   const { login } = useAuth();
   const [error, setError] = useState();
   const [loading, setLoading] = useState(false);
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -18,7 +18,7 @@ function LoginPage() {
       setLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
       alert("LOGIN SUCCESSFUL!");
-      history("/dashboard");
+      navigate("/dashboard");
     } catch {
       setError("FAILED TO LOG IN");
     }
@@ -46,12 +46,16 @@ function LoginPage() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
-
             <p></p>
             <Button disabled={loading} className="w-100" type="submit">
               LOG IN
             </Button>
           </Form>
+          <div className="w-100 text-center mt-3">
+            <Link to="/forgotpassword">
+              <Alert variant="danger">FORGOT YOUR PASSWORD?</Alert>
+            </Link>
+          </div>
         </Card.Body>
       </Card>
 

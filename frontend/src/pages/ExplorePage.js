@@ -1,4 +1,4 @@
-import SignupPage from "./SignupPage";
+import SignupPage from "./OldSignupPage";
 
 import { useNavigate } from "react-router-dom";
 

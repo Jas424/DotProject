@@ -7,9 +7,10 @@ import UserCardProfile from "./UserCardProfile";
 function UserCard(props) {
   const [UserCardProfileIsOpen, setUserCardProfileIsOpen] = useState(false);
 
-  function deleteHandler() {
+  /*function deleteHandler() {
     setUserCardProfileIsOpen(true);
   }
+  */
 
   function closeUserCardProfileHandler() {
     setUserCardProfileIsOpen(false);
