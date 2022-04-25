@@ -59,6 +59,17 @@ function EditProfilePage() {
           {/* if we have an error, then render an alert */}
           {error && <Alert variant="danger">{error}</Alert>}
           {/* begin form */}
+          <h3> Instructions:</h3>
+          <p>
+            1. To only change your email, type in the new email and leave the
+            password fields empty.
+          </p>
+          <p>
+            2. To only change your password, make sure your email address is
+            correct, then type and confirm your new password.
+          </p>
+        </Card.Body>
+        <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" controlId="formEmail">
               <Form.Label>Email</Form.Label>
@@ -97,14 +108,15 @@ function EditProfilePage() {
           {/* end form */}
         </Card.Body>
       </Card>
-
-      {/* className: w-100 = span whole width */}
-      {/* className: mt-2 = margin top spacing */}
-      <div className="w-100 text-center mt-2">
-        <Link to="/dashboard">
-          <Alert>CANCEL</Alert>
-        </Link>
-      </div>
+      <Card>
+        {/* className: w-100 = span whole width */}
+        {/* className: mt-2 = margin top spacing */}
+        <div className="w-100 text-center mt-2">
+          <Link to="/dashboard">
+            <Alert>CANCEL</Alert>
+          </Link>
+        </div>
+      </Card>
     </>
   );
 }
