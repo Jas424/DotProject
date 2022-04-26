@@ -54,13 +54,13 @@ export function AuthProvider({ children }) {
 
   //FUNCTION FOR UPLOADING PROFILE PHOTO
   async function photoUpload(file, currentUser, setLoading) {
-    //make reference to a file on firebase store database in order to store our photo there
+    //make reference to a file on firebase store database
     const fileRef = ref(storage, "images/" + currentUser.uid + ".png");
 
     //create a loading state for when the file is uploading
     setLoading(true);
 
-    //use uploadBytes from firebase to grab the file and put it in the store it in the location in our reference file from earlier
+    //use uploadBytes from firebase to grab the file and upload it in the location specified in our reference file from earlier
     const snapshot = await uploadBytes(fileRef, file);
     const photoURL = await getDownloadURL(fileRef);
 

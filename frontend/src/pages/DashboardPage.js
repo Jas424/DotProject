@@ -39,9 +39,10 @@ function DashboardPage() {
 
   // using useEffect to control how many times we fetch data from API
   useEffect(() => {
+    // log the current user's photoURL property for testing purposes
     console.log(currentUser.photoURL);
 
-    // if current user is not null, then load a generic photo
+    // if current user is not null and photoURL is not null, then load a generic photo
     if (currentUser?.photoURL) {
       console.log(currentUser.photoURL);
       setPhotoURL(currentUser.photoURL);
