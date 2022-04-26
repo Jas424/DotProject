@@ -1,7 +1,12 @@
 // use this context to access current user anywhere in the application
+
 import React, { useContext, useEffect, useState } from "react";
+
 // use firebase to set the current user using the auth module created in firebase.js
 import { auth } from "../firebase";
+
+// for firebase storage API
+import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 // this context will be used inside our provider
 const AuthContext = React.createContext();
@@ -14,6 +19,9 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
+
+  //get handle to storage API
+  const storage = getStorage();
 
   function signup(email, password) {
     // return a promise to use inside of the actual signup form and return an error message or redirect user to the correct page
@@ -40,6 +48,29 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password);
   }
 
+  function updateProfile(currentUser, { photoURL }) {
+    return currentUser.updateProfile(currentUser);
+  }
+
+  //FUNCTION FOR UPLOADING PROFILE PHOTO
+  async function photoUpload(file, currentUser, setLoading) {
+    //make reference to a file on firebase store database in order to store our photo there
+    const fileRef = ref(storage, "images/" + currentUser.uid + ".png");
+
+    //create a loading state for when the file is uploading
+    setLoading(true);
+
+    //use uploadBytes from firebase to grab the file and put it in the store it in the location in our reference file from earlier
+    const snapshot = await uploadBytes(fileRef, file);
+    const photoURL = await getDownloadURL(fileRef);
+
+    //update the profile photo
+    // updateProfile(currentUser, { photoURL });
+    currentUser.updateProfile({ photoURL: { photoURL } });
+    setLoading(false);
+    alert("FILE UPLOADED!");
+  }
+
   // we want auth.onAuthStateChanger to only run once when we mount our component so we put it in a useEffect()
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -59,7 +90,10 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
+    photoUpload,
+    updateProfile,
   };
+
   return (
     <AuthContext.Provider value={value}>
       {/* only render children if not loading */}
