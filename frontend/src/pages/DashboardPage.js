@@ -32,7 +32,7 @@ function DashboardPage() {
     }
   }
 
-  // function that handles the "confirm" button
+  // "confirm" button handler
   function handleConfirm() {
     photoUpload(photo, currentUser, setLoading);
   }
