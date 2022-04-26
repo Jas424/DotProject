@@ -67,6 +67,8 @@ export function AuthProvider({ children }) {
     //update the profile photo
     // updateProfile(currentUser, { photoURL });
     currentUser.updateProfile({ photoURL: { photoURL } });
+
+    // now that the file is uploaded, set the loading state to false and give user feedback
     setLoading(false);
     alert("FILE UPLOADED!");
   }
