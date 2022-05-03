@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import SignupPage from "./OldSignupPage";
 
 import { useNavigate } from "react-router-dom";

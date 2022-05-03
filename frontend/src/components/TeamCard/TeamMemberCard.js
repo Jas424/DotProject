@@ -1,5 +1,5 @@
 /* a custom react component that looks like a playing card and contains each team member's "about me" information */
-
+import React, { Component }  from 'react';
 import { useState } from "react";
 
 import TeamCardProfile from "./TeamCardProfile";

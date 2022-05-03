@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 function CodeLabPage() {
   return (
     <div>

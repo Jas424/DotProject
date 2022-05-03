@@ -1,3 +1,5 @@
+import React, { Component }  from 'react';
+
 /*component of TeamMemberCard.js that helps display the "About Me" information for each team member's picture on the "About Us" page*/
 
 function TeamCardProfile(props) {

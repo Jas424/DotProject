@@ -1,4 +1,5 @@
 import UserCard from "../components/UserCard/UserCard";
+import React, { Component }  from 'react';
 
 import userProfile from "../components/images/genericMale2.jpg";
 

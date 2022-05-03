@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 
 import dotSmallLogo from "./dot-small-logo.png";
+import React, { Component }  from 'react';
 
 function MainNavigation() {
   return (

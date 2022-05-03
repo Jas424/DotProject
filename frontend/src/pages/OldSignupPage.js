@@ -1,5 +1,5 @@
 import classes from "./OldSignupPage.module.css";
-
+import React, { Component }  from 'react';
 import { useRef } from "react";
 
 function OldSignupPage(props) {

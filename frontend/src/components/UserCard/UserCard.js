@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 /* a custom react component that looks like a playing card and contains each team member's "about me" information */
 
 import { useState } from "react";
