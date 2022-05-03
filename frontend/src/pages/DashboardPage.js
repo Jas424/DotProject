@@ -43,7 +43,7 @@ function DashboardPage() {
     console.log(currentUser.photoURL);
 
     // if current user is not null and photoURL is not null, then load a generic photo
-    if (currentUser?.photoURL) {
+    if (currentUser.photoURL) {
       console.log(currentUser.photoURL);
       setPhotoURL(currentUser.photoURL);
     }
