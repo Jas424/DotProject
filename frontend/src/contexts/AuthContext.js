@@ -49,11 +49,11 @@ export function AuthProvider({ children }) {
   }
 
   function updateProfile(currentUser, { photoURL }) {
-    return currentUser.updateProfile(currentUser);
+    return currentUser.updateProfile(currentUser, { photoURL });
   }
 
   //FUNCTION FOR UPLOADING PROFILE PHOTO
-  async function photoUpload(file, currentUser, setLoading) {
+  async function upload(file, currentUser, setLoading) {
     //make reference to a file on firebase store database
     const fileRef = ref(storage, "profile-photos/" + currentUser.uid + ".png");
 
@@ -62,15 +62,16 @@ export function AuthProvider({ children }) {
 
     //use uploadBytes from firebase to grab the file and upload it in the location specified in our reference file from earlier
     const snapshot = await uploadBytes(fileRef, file);
-    const photoURL = await getDownloadURL(fileRef);
+    const newPhotoURL = await getDownloadURL(fileRef);
+    alert("File Uploaded\nphotoURL: " + newPhotoURL);
+    alert("currentUser.photoURL: " + currentUser.photoURL);
 
     //update the profile photo
-    // updateProfile(currentUser, { photoURL });
-    currentUser.updateProfile({ photoURL: { photoURL } });
+    updateProfile(currentUser, { newPhotoURL });
+    // currentUser.updateProfile({ photoURL: { photoURL } });
 
     // now that the file is uploaded, set the loading state to false and give user feedback
     setLoading(false);
-    alert("FILE UPLOADED!");
   }
 
   // we want auth.onAuthStateChanger to only run once when we mount our component so we put it in a useEffect()
@@ -92,7 +93,7 @@ export function AuthProvider({ children }) {
     resetPassword,
     updateEmail,
     updatePassword,
-    photoUpload,
+    upload,
     updateProfile,
   };
 

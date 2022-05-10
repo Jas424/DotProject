@@ -7,11 +7,11 @@ import genericPhoto from "../components/images/genericPerson.png";
 
 function DashboardPage() {
   const [error, setError] = useState("");
-  const { currentUser, logout, photoUpload } = useAuth();
+  const { currentUser, logout, upload } = useAuth();
   const history = useNavigate();
   const [photo, setPhoto] = useState(null);
-  const [photoURL, setPhotoURL] = useState(genericPhoto);
   const [loading, setLoading] = useState(false);
+  const [photoURL, setPhotoURL] = useState(genericPhoto);
 
   // logout button handler
   async function handleLogout() {
@@ -26,7 +26,8 @@ function DashboardPage() {
   }
 
   // "choose file" button handler
-  function handleChange(e) {
+  function handleBrowse(e) {
+    alert("current photoURL: " + currentUser.photoURL);
     if (e.target.files[0]) {
       setPhoto(e.target.files[0]);
     }
@@ -34,17 +35,14 @@ function DashboardPage() {
 
   // "confirm" button handler
   function handleConfirm() {
-    photoUpload(photo, currentUser, setLoading);
+    alert("UPLOADING");
+    upload(photo, currentUser, setLoading);
   }
 
   // using useEffect to control how many times we fetch data from API
   useEffect(() => {
-    // log the current user's photoURL property for testing purposes
-    console.log(currentUser.photoURL);
-
-    // if current user is not null and photoURL is not null, then load a generic photo
+    // if current user is not null and photoURL is not null, then set the photo, otherwise keep the generic photo
     if (currentUser?.photoURL) {
-      console.log(currentUser.photoURL);
       setPhotoURL(currentUser.photoURL);
     }
   }, [currentUser]);
@@ -58,6 +56,8 @@ function DashboardPage() {
             {error && <Alert variant="danger">{error}</Alert>}
             <center>
               <strong>Welcome, {currentUser.email}!</strong>
+              <p>photoURL: {currentUser.photoURL}</p>
+              <p>uid: {currentUser.uid}</p>
             </center>
           </Card.Body>
 
@@ -80,7 +80,8 @@ function DashboardPage() {
             </center>
             <center>
               {/* CHOOSE FILE BUTTON */}
-              <input type="file" onChange={handleChange} />{" "}
+              <input type="file" onChange={handleBrowse} />{" "}
+              {/* CONFIRM BUTTON */}
               <button disabled={loading || !photo} onClick={handleConfirm}>
                 CONFIRM
               </button>
