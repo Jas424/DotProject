@@ -75,8 +75,11 @@ function DashboardPage() {
 
           <div>
             <center>
-              <p>CHOOSE A FILE AND CLICK CONFIRM</p>
-              <p>TO CHANGE YOUR PROFILE PHOTO</p>
+              <p>
+                <font color="red">
+                  CHOOSE A FILE AND CLICK CONFIRM TO CHANGE YOUR PROFILE PHOTO
+                </font>
+              </p>
             </center>
             <center>
               {/* CHOOSE FILE BUTTON */}
@@ -87,6 +90,7 @@ function DashboardPage() {
               </button>
             </center>
           </div>
+
           <Card.Body>
             <Link to="/editprofile" className="btn btn-primary w-100 mt-3">
               <strong>EDIT PROFILE</strong>
