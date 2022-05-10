@@ -43,7 +43,7 @@ function InfoPage() {
           style={{ height: "700px" }}
           onChangeLocation={handleChangeLocation}
           onChangeZoom={handleChangeZoom}
-          apiKey="AIzaSyBgshsmpaP3bj7cYY0Ma4dtlsstiv7FkOQ"
+          apiKey=""
         />
       </>
     );
