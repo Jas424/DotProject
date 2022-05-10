@@ -14,6 +14,7 @@ import DashboardPageLoader from "./components/PageLoaders/DashboardPageLoader";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPageLoader";
 import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
+import InfoPageLoader from "./components/PageLoaders/InfoPageLoader";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
             element={<EditProfilePageLoader />}
             exact
           />
+          <Route path="/infopage" element={<InfoPageLoader />} exact />
         </Route>
       </Routes>
     </div>
