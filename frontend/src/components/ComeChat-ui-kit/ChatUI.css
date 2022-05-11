@@ -1,0 +1,10 @@
+.chatContainer {
+    background-color: white;
+    width: 100%;
+    min-height: 100% !important;
+
+}
+
+.cometchat {
+    height: 90vh !important;
+}

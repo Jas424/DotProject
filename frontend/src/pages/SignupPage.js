@@ -2,12 +2,20 @@ import React, { useRef, useState } from "react";
 import { Alert, Button, Card, Form } from "react-bootstrap";
 import { useAuth } from "../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
+import { CometChat } from "@cometchat-pro/chat";
 
 function SignupPage() {
   const emailRef = useRef();
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
+
+
+  //comChat credentials
+
+  const authKey = process.env.REACT_APP_COMECHAT_AUTH_KEY;
+  const { currentUser } = useAuth();
+
 
   // create one state where password and password conf are equal and one where they arent
   const [error, setError] = useState("");
@@ -17,6 +25,22 @@ function SignupPage() {
 
   // using useNavigate to redirect the user to a particular page when done signing up
   const history = useNavigate();
+
+
+  //creating comeChat user
+
+  const createComChateUser = (userEmail) => {
+    const uId = userEmail.split('@')[0]
+    var user = new CometChat.User(uId);
+    user.setName(userEmail);
+    CometChat.createUser(user, authKey).then(
+      user => {
+        console.log("comeChat user created", user);
+      }, error => {
+        console.log("comeChat user creation error", error);
+      }
+    )
+  }
 
   // made this an async function so that it first checks if the password and password conf are the same and then it runs the code. this function runs when the "sign up" button is clicked
   async function handleSubmit(e) {
@@ -36,7 +60,16 @@ function SignupPage() {
       setLoading(true);
       // call the signup function created in AuthContent and pass in the email and password
       await signup(emailRef.current.value, passwordRef.current.value);
+
+      // creating comeChat user for signUp user
+      createComChateUser(emailRef.current.value)
+
       alert("ACCOUNT CREATED!");
+
+      if (currentUser) {
+        console.log(currentUser);
+      }
+
       history.push("/createaccount");
     } catch {
       alert("SIGNUP FAILED!");

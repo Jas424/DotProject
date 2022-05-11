@@ -1,11 +1,27 @@
 /* this component is the navigation bar at the top of the page */
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 import dotSmallLogo from "./dot-small-logo.png";
 
 function MainNavigation() {
+
+
+  const { currentUser, logout } = useAuth();
+  const navigate = useNavigate()
+
+  // const { currentUser } = useAuth();
+
+
+  const handleLogout = () => {
+    logout()
+    navigate('/login')
+  }
+
+
+
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
@@ -40,6 +56,22 @@ function MainNavigation() {
           <li>
             <Link to="/homepage">HOME PAGE</Link>
           </li>
+
+          {
+            currentUser?.multiFactor?.user ?
+              <>
+                <li>
+                  <Link to="/chat">Chat</Link>
+                </li>
+
+                <li>
+                  <Link onClick={handleLogout} to=" ">Logout</Link>
+                </li>
+
+              </>
+              :
+              ""
+          }
 
           {/* <li> */}
           {/* <Link to="/dashboard">DASHBOARD</Link> */}

@@ -14,12 +14,16 @@ import DashboardPageLoader from "./components/PageLoaders/DashboardPageLoader";
 import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPageLoader";
 import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
+import { AuthProvider } from "./contexts/AuthContext";
+import ChatUI from "./components/ComeChat-ui-kit/ChatUI";
 
 function App() {
   return (
     <div>
       {/* render navigation bar */}
-      <MainNavigation />
+      <AuthProvider>
+        <MainNavigation />
+      </AuthProvider>
       {/* set up routes for navigation bar */}
       <Routes>
         <Route path="/" element={<AboutUsPage />} exact />
@@ -37,6 +41,13 @@ function App() {
             element={<EditProfilePageLoader />}
             exact
           />
+
+          <Route path="/chat" element={
+            <AuthProvider>
+              <ChatUI />
+            </AuthProvider>
+          } />
+
         </Route>
       </Routes>
     </div>
