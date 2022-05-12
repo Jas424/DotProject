@@ -63,8 +63,8 @@ export function AuthProvider({ children }) {
     //use uploadBytes from firebase to grab the file and upload it in the location specified in our reference file from earlier
     const snapshot = await uploadBytes(fileRef, file);
     const newPhotoURL = await getDownloadURL(fileRef);
-    alert("File Uploaded\nphotoURL: " + newPhotoURL);
-    alert("currentUser.photoURL: " + currentUser.photoURL);
+    console.log("File Uploaded\nphotoURL: " + newPhotoURL);
+    console.log("currentUser.photoURL: " + currentUser.photoURL);
 
     //update the profile photo
     updateProfile(currentUser, { newPhotoURL });
@@ -72,6 +72,7 @@ export function AuthProvider({ children }) {
 
     // now that the file is uploaded, set the loading state to false and give user feedback
     setLoading(false);
+    return newPhotoURL;
   }
 
   // we want auth.onAuthStateChanger to only run once when we mount our component so we put it in a useEffect()

@@ -27,16 +27,17 @@ function DashboardPage() {
 
   // "choose file" button handler
   function handleBrowse(e) {
-    alert("current photoURL: " + currentUser.photoURL);
+    console.log("current photoURL: " + currentUser.photoURL);
     if (e.target.files[0]) {
       setPhoto(e.target.files[0]);
     }
   }
 
   // "confirm" button handler
-  function handleConfirm() {
-    alert("UPLOADING");
-    upload(photo, currentUser, setLoading);
+  async function handleConfirm() {
+    console.log("UPLOADING");
+    const url = await upload(photo, currentUser, setLoading);
+    console.log(url);
   }
 
   // using useEffect to control how many times we fetch data from API
