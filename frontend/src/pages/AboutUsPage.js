@@ -1,3 +1,4 @@
+import React from "react";
 import TeamMemberCard from "../components/TeamCard/TeamMemberCard";
 
 import genericMalePhoto from "../components/images/genericMale.png";

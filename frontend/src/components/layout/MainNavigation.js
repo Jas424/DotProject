@@ -5,6 +5,8 @@ import classes from "./MainNavigation.module.css";
 
 import dotSmallLogo from "./dot-small-logo.png";
 
+import React from "react";
+
 function MainNavigation() {
   return (
     <header className={classes.header}>
