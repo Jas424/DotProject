@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Alert, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
@@ -8,18 +8,15 @@ import AvatarEditor from "../components/ProfileEditors/AvatarEditor";
 
 function DashboardPage() {
   const { logout } = useAuth();
-  const [error, setError] = useState("");
   const history = useNavigate();
 
   // logout button handler
   async function handleLogout() {
-    setError("");
-
     try {
       await logout();
       history("/login");
     } catch {
-      setError("FAILED TO LOG OUT");
+      console.log("FAILED TO LOG OUT");
     }
   }
 
@@ -54,7 +51,6 @@ function DashboardPage() {
               <Alert>LOG OUT</Alert>
             </Button>
           </Link>
-          {{ error } && <Alert variant="danger">{error}</Alert>}
         </div>
       </AuthProvider>
     </>
