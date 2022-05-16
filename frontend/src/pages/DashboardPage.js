@@ -1,10 +1,11 @@
 import React from "react";
-import { Alert, Button, Card } from "react-bootstrap";
+import { Alert, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 import LocationEditor from "../components/ProfileEditors/LocationEditor";
 import AvatarEditor from "../components/ProfileEditors/AvatarEditor";
+import BioCard from "../components/ProfileEditors/BioCard";
 
 function DashboardPage() {
   const { logout } = useAuth();
@@ -24,24 +25,19 @@ function DashboardPage() {
     <>
       <AuthProvider>
         <div className="flexbox-container">
-          <AvatarEditor />
+          {/* AVATAR CARD */}
+          <div>
+            <AvatarEditor />
+          </div>
 
           {/* LOCATION CARD */}
-
           <div>
-            <Card className="text-center mb-4">
-              <LocationEditor />
-            </Card>
+            <LocationEditor />
           </div>
 
           {/* BIO AND INTERESTS CARD */}
-
           <div>
-            <Card>
-              <Card.Body>
-                <span>BIO AND INTERESTS</span>
-              </Card.Body>
-            </Card>
+            <BioCard />
           </div>
         </div>
 

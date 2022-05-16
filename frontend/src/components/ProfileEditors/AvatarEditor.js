@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
-import { AuthProvider, useAuth } from "../../contexts/AuthContext";
+import { useAuth } from "../../contexts/AuthContext";
 import genericPhoto from "../images/genericPerson.png";
 
 function AvatarEditor() {
@@ -36,43 +36,40 @@ function AvatarEditor() {
   }, [currentUser]);
 
   return (
-    <AuthProvider>
-      <div>
-        <Card>
-          <Card.Body>
-            <h2 className="text-center mb-4">PROFILE</h2>
-            <center>
-              <strong>Welcome, {currentUser.email}!</strong>
-            </center>
-          </Card.Body>
+    <div>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">PROFILE</h2>
+          <center>
+            <strong>Welcome, {currentUser.email}!</strong>
+          </center>
+        </Card.Body>
 
-          {/* ACTUAL PROFILE PICTURE */}
-          <Card.Body>
-            <center>
-              <img alt="avatar" src={photoURL} height="200px" width="200px" />
-            </center>
-          </Card.Body>
+        {/* ACTUAL PROFILE PICTURE */}
+        <Card.Body>
+          <center>
+            <img alt="avatar" src={photoURL} height="200px" width="200px" />
+          </center>
+        </Card.Body>
 
-          <Card.Body>
-            <center>
-              <p>
-                <font color="red">
-                  CHOOSE A FILE AND CLICK CONFIRM TO CHANGE YOUR PROFILE PHOTO
-                </font>
-              </p>
-            </center>
-            <center>
-              {/* CHOOSE FILE BUTTON */}
-              <input type="file" onChange={handleBrowse} />{" "}
-              {/* CONFIRM BUTTON */}
-              <button disabled={loading || !photo} onClick={handleConfirm}>
-                CONFIRM
-              </button>
-            </center>
-          </Card.Body>
-        </Card>
-      </div>
-    </AuthProvider>
+        <Card.Body>
+          <center>
+            <p>
+              <font color="red">
+                CHOOSE A FILE AND CLICK CONFIRM TO CHANGE YOUR PROFILE PHOTO
+              </font>
+            </p>
+          </center>
+          <center>
+            {/* CHOOSE FILE BUTTON */}
+            <input type="file" onChange={handleBrowse} /> {/* CONFIRM BUTTON */}
+            <button disabled={loading || !photo} onClick={handleConfirm}>
+              CONFIRM
+            </button>
+          </center>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
 
