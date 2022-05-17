@@ -6,8 +6,9 @@ body {
   font: sans-serif;
   margin: 3rem;
   background: linear-gradient(-45deg, #97edcf, #4658cd, #23a6d5, #1455af);
+  background-image: url("../src/components/images/dot-mountain-bg.jpg");
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: nudge 15s ease infinite alternate;
   height: 100vh;
 }
 
@@ -116,6 +117,34 @@ h2 {
 .column {
   float: left;
   width: 20%;
+}
+
+.dotAnimation {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  animation: cowmove 5s linear infinite;
+}
+
+@keyframes cowmove {
+  0% {
+    transform: translateX(100px) rotate(0);
+  }
+  30% {
+    transform: translateX(400px) rotate(0);
+  }
+  50% {
+    transform: translateX(400px) rotate(0);
+  }
+  80% {
+    transform: translateX(100px) rotate(0);
+  }
+  100% {
+    transform: translateX(100px) rotate(0);
+  }
 }
 
 .flexbox-container {

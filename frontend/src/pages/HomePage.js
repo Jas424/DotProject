@@ -1,15 +1,23 @@
 import React from "react";
 import { Alert, Card } from "react-bootstrap";
-// import UserCard from "../components/UserCard/UserCard";
 
+// import UserCard from "../components/UserCard/UserCard";
 // import userProfile from "../components/images/genericMale2.jpg";
+
 import homepagePhoto from "../components/images/dot-homepage-image.jpg";
+
+import dotSmallLogo from "../components/layout/dot-small-logo.png";
 
 function HomePage() {
   return (
     <div className="homepageDiv">
       <div className="d-grid gap-2">
         <Alert>
+          <img
+            className="dotAnimation"
+            src={dotSmallLogo}
+            alt="dot-small-logo"
+          />
           <center>
             <h1>WELCOME TO THE DOT DATING APP!</h1>
           </center>
