@@ -1,5 +1,5 @@
 import React from "react";
-import SignupPage from "./OldSignupPage";
+import SignupPage from "./SignupPage";
 
 import { useNavigate } from "react-router-dom";
 
