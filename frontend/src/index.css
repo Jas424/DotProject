@@ -125,7 +125,8 @@ h2 {
 }
 
 .homepageDiv {
-  background-color: white;
+  /* background-color: white; */
+  background-image: url("../src/components/images/dot-mountain-bg.jpg");
 }
 
 .hometown {
