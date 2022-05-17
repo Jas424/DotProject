@@ -6,6 +6,8 @@ import { useNavigate } from "react-router-dom";
 import LocationEditor from "../components/ProfileEditors/LocationEditor";
 import AvatarEditor from "../components/ProfileEditors/AvatarEditor";
 import BioCard from "../components/ProfileEditors/BioCard";
+import ProfileEditor from "../components/ProfileEditors/ProfileEditor.js";
+import WelcomeCard from "../components/ProfileEditors/WelcomeCard";
 
 function DashboardPage() {
   const { logout } = useAuth();
@@ -25,6 +27,18 @@ function DashboardPage() {
     <>
       <AuthProvider>
         <div className="flexbox-container">
+          {/* ACCOUNT EDITOR CARD */}
+          <div>
+            <ProfileEditor />
+          </div>
+
+          {/* WELCOME CARD */}
+          <div>
+            <WelcomeCard />
+          </div>
+        </div>
+
+        <div className="flexbox-container">
           {/* AVATAR CARD */}
           <div>
             <AvatarEditor />
@@ -41,7 +55,7 @@ function DashboardPage() {
           </div>
         </div>
 
-        <div class="w-100 text-center mt-2">
+        <div className="w-100 text-center mt-2">
           <Link to="/login">
             <Button variant="link" onClick={handleLogout}>
               <Alert>LOG OUT</Alert>

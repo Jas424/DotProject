@@ -39,10 +39,7 @@ function AvatarEditor() {
     <div>
       <Card>
         <Card.Body>
-          <h2 className="text-center mb-4">PROFILE</h2>
-          <center>
-            <strong>Welcome, {currentUser.email}!</strong>
-          </center>
+          <h2 className="text-center mb-4">AVATAR</h2>
         </Card.Body>
 
         {/* ACTUAL PROFILE PICTURE */}

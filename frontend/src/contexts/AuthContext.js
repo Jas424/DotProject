@@ -2,16 +2,20 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-// use firebase to set the current user using the auth module created in firebase.js
-import { auth } from "../firebase";
+import firebase from "../firebase";
+
+// firebase authentication module
+import "firebase/compat/auth";
 
 // for firebase storage API
 import { getStorage, getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
+const auth = firebase.auth();
+
 // this context will be used inside our provider
 const AuthContext = React.createContext();
 
-//function to let us use this context
+// function to let us use this context
 export function useAuth() {
   return useContext(AuthContext);
 }
@@ -20,13 +24,8 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  //get handle to storage API
+  // get handle to storage API
   const storage = getStorage();
-
-  function signup(email, password) {
-    // return a promise to use inside of the actual signup form and return an error message or redirect user to the correct page
-    return auth.createUserWithEmailAndPassword(email, password);
-  }
 
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
@@ -38,6 +37,10 @@ export function AuthProvider({ children }) {
 
   function resetPassword(email) {
     return auth.sendPasswordResetEmail(email);
+  }
+
+  function signup(email, password) {
+    return auth.createUserWithEmailAndPassword(email, password);
   }
 
   function updateEmail(email) {
@@ -52,19 +55,19 @@ export function AuthProvider({ children }) {
     return currentUser.updateProfile({ photoURL });
   }
 
-  //FUNCTION FOR UPLOADING PROFILE PHOTO
+  // FUNCTION FOR UPLOADING PROFILE PHOTO
   async function upload(file, currentUser, setLoading) {
-    //make reference to a file on firebase store database
+    // make reference to a file on firebase store database
     const fileRef = ref(storage, "profile-photos/" + currentUser.uid + ".png");
 
-    //create a loading state for when the file is uploading
+    // create a loading state for when the file is uploading
     setLoading(true);
 
-    //use uploadBytes from firebase to grab the file and upload it in the location specified in our reference file from earlier
+    // use uploadBytes from firebase to grab the file and upload it in the location specified in our reference file from earlier
     await uploadBytes(fileRef, file);
     const photoURL = await getDownloadURL(fileRef);
 
-    //update the user object's photoURL property with the new URL
+    // update the user object's photoURL property with the new URL
     updateProfile(photoURL);
 
     // now that the file is uploaded, set the loading state to false and give user feedback
@@ -79,7 +82,7 @@ export function AuthProvider({ children }) {
       setCurrentUser(user);
       setLoading(false);
     });
-    // unsubscribe us from the onAuthStateChanged listener when we unmount it
+    //unsubscribe us from the onAuthStateChanged listener when we unmount it
     return unsubscribe;
   }, []);
 

@@ -16,7 +16,7 @@ function SignupPage() {
   const [loading, setLoading] = useState(false);
 
   // using useNavigate to redirect the user to a particular page when done signing up
-  const history = useNavigate();
+  const navigate = useNavigate();
 
   // made this an async function so that it first checks if the password and password conf are the same and then it runs the code. this function runs when the "sign up" button is clicked
   async function handleSubmit(e) {
@@ -34,12 +34,14 @@ function SignupPage() {
       setError("");
       // set up a loading state, so when user is signing up, they can't keep clicking the "sign up" button and create multiple accounts
       setLoading(true);
+
       // call the signup function created in AuthContent and pass in the email and password
       await signup(emailRef.current.value, passwordRef.current.value);
-      alert("ACCOUNT CREATED!");
-      history.push("/createaccount");
+
+      alert("ACCOUNT CREATED! PLEASE LOG IN.");
+      navigate("/login");
     } catch {
-      alert("SIGNUP FAILED!");
+      console.log("SIGNUP FAILED!");
       setError("FAILED TO CREATE AN ACCOUNT");
     }
     // when signup is done, re-enable the signup function
