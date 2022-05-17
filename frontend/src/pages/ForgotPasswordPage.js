@@ -27,8 +27,10 @@ function ForgotPasswordPage() {
   return (
     <>
       <Card>
+        <Card.Header as="h3">
+          <center>PASSWORD RESET PAGE</center>
+        </Card.Header>
         <Card.Body>
-          <h2 className="text-center mb-4">PASSWORD RESET PAGE</h2>
           {error && <Alert variant="danger">{error}</Alert>}
           {message && <Alert variant="success">{message}</Alert>}
           <Form onSubmit={handleSubmit}>
@@ -42,18 +44,29 @@ function ForgotPasswordPage() {
               />
             </Form.Group>
             <p></p>
-            <Button disabled={loading} className="w-100" type="submit">
-              RESET PASSWORD
-            </Button>
+            <div className="d-grid gap-2">
+              <Button
+                variant="primary"
+                disabled={loading}
+                type="submit"
+                size="lg"
+              >
+                RESET PASSWORD
+              </Button>
+            </div>
           </Form>
         </Card.Body>
       </Card>
 
-      <div className="w-100 text-center mt-2">
-        <Link to="/login">
-          <Alert>DO YOU REMEMBER YOUR PASSWORD? LOG IN HERE</Alert>
-        </Link>
-      </div>
+      <Card bg="secondary">
+        <div className="d-grid gap-2">
+          <Link to="/login">
+            <Button variant="secondary" size="lg">
+              DO YOU REMEMBER YOUR PASSWORD? LOG IN HERE
+            </Button>
+          </Link>
+        </div>
+      </Card>
     </>
   );
 }

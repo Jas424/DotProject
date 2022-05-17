@@ -13,21 +13,19 @@ function LocationEditor() {
 
   return (
     <Card>
+      <Card.Header as="h3">
+        <center>LOCATION</center>
+      </Card.Header>
       <Card.Body>
-        <div>
-          <div>
-            <h2 className="text-center mb-4">LOCATION</h2>
+        <div id="main-container">
+          <div id="flag-container">
+            <img src="" alt=""></img>
           </div>
-          <div id="main-container">
-            <div id="flag-container">
-              <img src="" alt=""></img>
-            </div>
-            <div id="info-container">
-              <select id="countries"></select>
-              <p>
-                Capital: <span id="capital"></span>
-              </p>
-            </div>
+          <div id="info-container">
+            <select id="countries"></select>
+            <p>
+              Capital: <span id="capital"></span>
+            </p>
           </div>
         </div>
       </Card.Body>

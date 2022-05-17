@@ -1,4 +1,5 @@
 import React from "react";
+import { Alert } from "react-bootstrap";
 import TeamMemberCard from "../components/TeamCard/TeamMemberCard";
 
 import genericMalePhoto from "../components/images/genericMale.png";
@@ -6,10 +7,12 @@ import genericFemalePhoto from "../components/images/genericFemale.png";
 
 function AboutUsPage() {
   return (
-    <div>
-      <center>
-        <h1>Meet The Dot Team</h1>
-      </center>
+    <div className="d-grid gap-2">
+      <Alert>
+        <center>
+          <h1>MEET THE DOT TEAM</h1>
+        </center>
+      </Alert>
       <div className="flexbox-container">
         <div>
           <TeamMemberCard

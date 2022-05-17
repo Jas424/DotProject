@@ -28,9 +28,11 @@ function LoginPage() {
   return (
     <>
       <Card>
-        <Card.Body>
+        <Card.Header>
           <h2 className="text-center mb-4">LOG IN</h2>
           {error && <Alert variant="danger">{error}</Alert>}
+        </Card.Header>
+        <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" controlId="formEmail">
               <Form.Label>Email</Form.Label>
@@ -47,23 +49,39 @@ function LoginPage() {
               <Form.Control type="password" ref={passwordRef} required />
             </Form.Group>
             <p></p>
-            <Button disabled={loading} className="w-100" type="submit">
-              LOG IN
-            </Button>
+            <div className="d-grid gap-2">
+              <Button
+                variant="primary"
+                disabled={loading}
+                type="submit"
+                size="lg"
+              >
+                LOG IN
+              </Button>
+            </div>
           </Form>
-          <div className="w-100 text-center mt-3">
+          <p></p>
+          <div className="d-grid gap-2">
             <Link to="/forgotpassword">
-              <Alert variant="danger">FORGOT YOUR PASSWORD?</Alert>
+              <center>
+                <Button variant="warning" size="lg">
+                  FORGOT YOUR PASSWORD?
+                </Button>
+              </center>
             </Link>
           </div>
         </Card.Body>
       </Card>
 
-      <div className="w-100 text-center mt-2">
-        <Link to="/signup">
-          <Alert>DON'T HAVE AN ACCOUNT? SIGN UP HERE</Alert>
-        </Link>
-      </div>
+      <Card bg="secondary">
+        <div className="d-grid gap-2">
+          <Link to="/signup">
+            <Button variant="secondary" size="lg">
+              DON'T HAVE AN ACCOUNT? SIGN UP HERE
+            </Button>
+          </Link>
+        </div>
+      </Card>
     </>
   );
 }

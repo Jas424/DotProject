@@ -38,9 +38,9 @@ function AvatarEditor() {
   return (
     <div>
       <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">AVATAR</h2>
-        </Card.Body>
+        <Card.Header as="h3">
+          <center>AVATAR</center>
+        </Card.Header>
 
         {/* ACTUAL PROFILE PICTURE */}
         <Card.Body>

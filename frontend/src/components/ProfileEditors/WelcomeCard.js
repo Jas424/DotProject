@@ -2,12 +2,10 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import firebase from "../../firebase";
-// import { db } from "../../firebase";
 
 function WelcomeCard() {
   const { currentUser } = useAuth();
 
-  // console.log(db);
   return (
     <Card>
       <Card.Body>
@@ -16,6 +14,8 @@ function WelcomeCard() {
     </Card>
   );
 }
+
+//will use this to pull user information from the firebase database
 const ref = firebase.firestore().collection("users");
 console.log(ref);
 

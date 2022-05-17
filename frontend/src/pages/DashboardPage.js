@@ -1,5 +1,5 @@
 import React from "react";
-import { Alert, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
@@ -50,15 +50,15 @@ function DashboardPage() {
           </div>
 
           {/* BIO AND INTERESTS CARD */}
-          <div>
+          <div className="bg-image hover-zoom" style={{ maxWidth: "22rem" }}>
             <BioCard />
           </div>
         </div>
 
         <div className="w-100 text-center mt-2">
           <Link to="/login">
-            <Button variant="link" onClick={handleLogout}>
-              <Alert>LOG OUT</Alert>
+            <Button variant="custom" onClick={handleLogout}>
+              <font size="14">LOG OUT</font>
             </Button>
           </Link>
         </div>

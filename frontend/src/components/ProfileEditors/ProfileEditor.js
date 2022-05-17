@@ -4,10 +4,15 @@ import { Link } from "react-router-dom";
 
 function ProfileEditor() {
   return (
-    <Card>
+    <Card border="danger" border-width="20px">
+      <Card.Header as="h3">
+        <center>ACCOUNT SETTINGS</center>
+      </Card.Header>
       <Card.Body>
         <Link to="/editprofile">
-          <h2 className="text-center mb-4">EDIT PROFILE</h2>
+          <h4>
+            <center>EDIT EMAIL / PASSWORD</center>
+          </h4>
         </Link>
       </Card.Body>
     </Card>

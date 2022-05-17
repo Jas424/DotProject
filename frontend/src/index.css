@@ -3,9 +3,9 @@
 }
 
 body {
-  font-family: sans-serif;
+  font: sans-serif;
   margin: 3rem;
-  background: linear-gradient(-45deg, #97c5ed, #4658cd, #23a6d5, #1455af);
+  background: linear-gradient(-45deg, #97edcf, #4658cd, #23a6d5, #1455af);
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 100vh;
@@ -29,7 +29,9 @@ h1 {
 }
 h2 {
   color: #000000;
-  font-family: "Catamaran", sans-serif;
+  /* font-family: "Catamaran", sans-serif; */
+  font-family: "Ubuntu";
+  font-weight: bold;
 }
 
 .aboutUsCard {
@@ -46,6 +48,10 @@ h2 {
   width: 100%;
 }
 
+.alreadyAccount {
+  background-color: #000000;
+}
+
 .backdrop {
   position: fixed;
   z-index: 1;
@@ -54,6 +60,12 @@ h2 {
   height: 100vh;
   top: 0;
   left: 0;
+}
+
+.btn.btn-custom {
+  background: linear-gradient(-45deg, #92c5ed, #5658cd, #13a6d5, #1455af);
+  color: white;
+  font-family: serif;
 }
 
 .btn {
@@ -110,6 +122,10 @@ h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.homepageDiv {
+  background-color: white;
 }
 
 .hometown {

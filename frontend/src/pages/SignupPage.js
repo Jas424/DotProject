@@ -51,11 +51,13 @@ function SignupPage() {
   return (
     <>
       <Card>
-        <Card.Body>
-          <h2 className="text-center mb-4">Sign Up</h2>
+        <Card.Header>
+          <h2 className="text-center mb-4">SIGN UP</h2>
           {/* if we have an error, then render an alert */}
           {error && <Alert variant="danger">{error}</Alert>}
           {/* begin form */}
+        </Card.Header>
+        <Card.Body>
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email" controlId="formEmail">
               <Form.Label>Email</Form.Label>
@@ -78,10 +80,17 @@ function SignupPage() {
             </Form.Group>
 
             <p></p>
-            {/* if form is loading, we dont want to be able to resubmit the form, so we add a "disabled" state to the submit button"  */}
-            <Button disabled={loading} className="w-100" type="submit">
-              Sign Up
-            </Button>
+            <div className="d-grid gap-2">
+              {/* if form is loading, we dont want to be able to resubmit the form, so we add a "disabled" state to the submit button"  */}
+              <Button
+                variant="primary"
+                disabled={loading}
+                type="submit"
+                size="lg"
+              >
+                SIGN UP
+              </Button>
+            </div>
           </Form>
           {/* end form */}
         </Card.Body>
@@ -89,11 +98,15 @@ function SignupPage() {
 
       {/* className: w-100 = span whole width */}
       {/* className: mt-2 = margin top spacing */}
-      <div className="w-100 text-center mt-2">
-        <Link to="/login">
-          <Alert>ALREADY HAVE AN ACCOUNT? LOG IN HERE</Alert>
-        </Link>
-      </div>
+      <Card bg="secondary">
+        <div className="d-grid gap-2">
+          <Link to="/login">
+            <Button variant="secondary" size="lg">
+              ALREADY HAVE AN ACCOUNT? LOG IN HERE
+            </Button>
+          </Link>
+        </div>
+      </Card>
     </>
   );
 }
