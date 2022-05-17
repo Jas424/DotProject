@@ -47,6 +47,13 @@ function AboutUsPage() {
         <div>
           <TeamMemberCard fullName="Jiten Lama" teamPhoto={genericMalePhoto} />
         </div>
+
+        <div>
+          <TeamMemberCard
+            fullName="Varsha Singh"
+            teamPhoto={genericFemalePhoto}
+          />
+        </div>
       </div>
     </div>
   );

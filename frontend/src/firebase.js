@@ -1,7 +1,6 @@
 /* this component contains a mapping of our environmental variables so if any of the actual values change  */
 
 import firebase from "firebase/compat/app";
-// import "firebase/compat/auth"; //firebase authentication module
 import "firebase/compat/firestore";
 
 //store firebase config values. using values from .env.local file
