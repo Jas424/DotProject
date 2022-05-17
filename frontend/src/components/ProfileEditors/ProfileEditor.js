@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function ProfileEditor() {
   return (
-    <Card border="danger" border-width="20px">
+    <Card>
       <Card.Header as="h3">
         <center>ACCOUNT SETTINGS</center>
       </Card.Header>
