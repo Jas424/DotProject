@@ -11,7 +11,7 @@ function MainNavigation() {
   return (
     <header className={classes.header}>
       <div className={classes.logo}>
-        <Link to="/homepage">
+        <Link to="/homepage" id={classes.dotCornerLogo}>
           <img
             className={classes.dotSmallLogo}
             src={dotSmallLogo}

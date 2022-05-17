@@ -55,12 +55,14 @@ function DashboardPage() {
           </div>
         </div>
 
-        <div className="w-100 text-center mt-2">
-          <Link to="/login">
-            <Button variant="custom" onClick={handleLogout}>
-              <font size="14">LOG OUT</font>
-            </Button>
-          </Link>
+        <div>
+          <center>
+            <Link to="/login">
+              <Button variant="secondary" onClick={handleLogout}>
+                <font size="14">LOG OUT</font>
+              </Button>
+            </Link>
+          </center>
         </div>
       </AuthProvider>
     </>

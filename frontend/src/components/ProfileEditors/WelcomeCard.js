@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import firebase from "../../firebase";
@@ -6,12 +6,45 @@ import firebase from "../../firebase";
 function WelcomeCard() {
   const { currentUser } = useAuth();
 
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  function getUsers() {
+    setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setUsers(items);
+      setLoading(false);
+    });
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   return (
-    <Card>
-      <Card.Body>
-        <h2 className="text-center mb-4">WELCOME, {currentUser.email}</h2>
-      </Card.Body>
-    </Card>
+    <div>
+      <Card>
+        <Card.Body>
+          <h2 className="text-center mb-4">WELCOME, {currentUser.email}</h2>
+        </Card.Body>
+
+        {users.map((users) => (
+          <div key={users.uid}>
+            <center>
+              <h5>
+                NAME: {users.firstname} {users.lastname}
+              </h5>
+              <p>HOMETOWN: {users.hometown}</p>
+              <p>OCCUPATION: {users.occupation}</p>
+            </center>
+          </div>
+        ))}
+      </Card>
+    </div>
   );
 }
 
