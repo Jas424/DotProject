@@ -5,9 +5,10 @@ function BioCard() {
   const bioRef = useRef();
   const [editBio, setEditBio] = useState();
 
-  function handleEdit() {
+  const handleEdit = async (e) => {
+    e.preventDefault();
     setEditBio(!editBio);
-  }
+  };
 
   return (
     <Card>
