@@ -28,8 +28,13 @@ function WelcomeCard() {
   return (
     <div>
       <Card>
+        <Card.Header as="h3">
+          <center>WELCOME</center>
+        </Card.Header>
         <Card.Body>
-          <h2 className="text-center mb-4">WELCOME, {currentUser.email}</h2>
+          <center>
+            <h4>{currentUser.email}</h4>
+          </center>
         </Card.Body>
 
         {users.map((users) => (
