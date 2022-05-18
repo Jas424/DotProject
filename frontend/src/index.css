@@ -1,9 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
 * {
   box-sizing: border-box;
 }
 
 body {
-  font: "Ubuntu";
+  font: "Merriweather";
   margin: 3rem;
   background: linear-gradient(-45deg, #97edcf, #4658cd, #23a6d5, #1455af);
   background-image: url("../src/components/images/dot-mountain-bg.jpg");
@@ -26,7 +27,7 @@ body {
 
 h1 {
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
-  font-family: "Catamaran", sans-serif;
+  font-family: "Merriweather";
 }
 h2 {
   color: #000000;

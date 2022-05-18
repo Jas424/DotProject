@@ -12,7 +12,7 @@ function AboutUsPage() {
       <Alert>
         <img className="dotAnimation" src={dotSmallLogo} alt="dot-small-logo" />
         <center>
-          <h1>MEET THE DOT TEAM</h1>
+          <h1>Meet The Dot Team</h1>
         </center>
       </Alert>
       <div className="flexbox-container">

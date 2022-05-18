@@ -33,17 +33,19 @@ function HomePage() {
       </div>
 
       <center>
-        <Card style={{ width: "800px" }}>
-          <Card.Img src={homepagePhoto} width="50px" />
-          <Card.Body>
-            <Card.Title>FIND YOUR PERFECT MATCH TODAY!</Card.Title>
-            <Card.Text>
-              Sign up for Dot quickly and easily with just an email address and
-              password. You never know, your soul mate may just be there waiting
-              for you!
-            </Card.Text>
-          </Card.Body>
-        </Card>
+        <Alert>
+          <Card style={{ width: "800px" }}>
+            <Card.Img src={homepagePhoto} width="50px" />
+            <Card.Body>
+              <Card.Title>FIND YOUR PERFECT MATCH TODAY!</Card.Title>
+              <Card.Text>
+                Sign up for Dot quickly and easily with just an email address
+                and password. You never know, your soul mate may just be there
+                waiting for you!
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Alert>
       </center>
 
       {/* <div class="flexbox-container">
