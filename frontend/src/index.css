@@ -4,7 +4,7 @@
 }
 
 body {
-  font: "Merriweather";
+  font-family: "Merriweather", serif;
   margin: 3rem;
   background: linear-gradient(-45deg, #97edcf, #4658cd, #23a6d5, #1455af);
   background-image: url("../src/components/images/dot-mountain-bg.jpg");
@@ -27,7 +27,7 @@ body {
 
 h1 {
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
-  font-family: "Merriweather";
+  font-family: "Merriweather", serif;
 }
 h2 {
   color: #000000;
@@ -64,10 +64,26 @@ h2 {
   left: 0;
 }
 
+.btn.btn-custom:hover {
+  text-decoration: none;
+}
+
 .btn.btn-custom {
-  background: linear-gradient(-45deg, #92c5ed, #5658cd, #13a6d5, #1455af);
-  color: white;
-  font-family: serif;
+  font-family: "Merriweather", serif;
+  text-decoration: none;
+  font-size: 3rem;
+  color: black;
+  display: block;
+  width: 50%;
+  padding: 12px;
+
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
 }
 
 .btn {
@@ -81,7 +97,7 @@ h2 {
   margin: 0 1rem;
   text-align: center;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.164);
-  font-family: "Catamaran", sans-serif;
+  font-family: "Merriweather", serif;
 }
 
 .btn-signup {
@@ -101,6 +117,10 @@ h2 {
 
 .btn--alt:hover {
   background-color: #f8dae9;
+}
+
+.btn--logout {
+  font: red;
 }
 
 .card {

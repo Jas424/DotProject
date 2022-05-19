@@ -2,28 +2,12 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import firebase from "../../firebase";
-import { db } from "../../firebase";
-// import { doc, onSnapshot } from "firebase/firestore";
 
-function WelcomeCard() {
+function AltWelcomeCard() {
   const { currentUser } = useAuth();
-  // const currentUID = currentUser.uid;
+
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(false);
-  // const uid = currentUser.uid;
-
-  // const unsub = onSnapshot(doc(db, "users", currentUID), (doc) => {
-  //   const source = doc.metadata.hasPendingWrites ? "Local" : "Server";
-  //   console.log(source, "data: ", doc.data());
-  // });
-
-  // async function showCollection() {
-  //   const snapshot = await db.collection("user").doc({ uid }).get();
-  //   snapshot.forEach((doc) => {
-  //     const item = doc.data();
-  //     console.log(item.bio);
-  //   });
-  // }
 
   function getUsers() {
     setLoading(true);
@@ -41,10 +25,6 @@ function WelcomeCard() {
     getUsers();
   }, []);
 
-  // useEffect(() => {
-  //   showCollection();
-  // }, []);
-
   return (
     <div>
       <Card>
@@ -58,12 +38,12 @@ function WelcomeCard() {
         </Card.Body>
 
         {users.map((users) => (
-          <div key={users.email}>
-            {/* <center> */}
-            <h5>NAME: {users.firstname}</h5>
-            <p>HOMETOWN: {users.hometown}</p>
-            <p>OCCUPATION: {users.occupation}</p>
-            {/* </center> */}
+          <div key={users.uid}>
+            <center>
+              <h5>NAME: {users.firstname}</h5>
+              <p>HOMETOWN: {users.hometown}</p>
+              <p>OCCUPATION: {users.occupation}</p>
+            </center>
           </div>
         ))}
       </Card>
@@ -73,6 +53,6 @@ function WelcomeCard() {
 
 //will use this to pull user information from the firebase database
 const ref = firebase.firestore().collection("users");
-// console.log(ref);
+console.log(ref);
 
 export default WelcomeCard;

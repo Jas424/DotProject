@@ -2,7 +2,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-import firebase from "../firebase";
+import firebase, { db } from "../firebase";
 
 // firebase authentication module
 import "firebase/compat/auth";
@@ -24,9 +24,6 @@ export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState();
   const [loading, setLoading] = useState(true);
 
-  // get handle to storage API
-  const storage = getStorage();
-
   function login(email, password) {
     return auth.signInWithEmailAndPassword(email, password);
   }
@@ -39,8 +36,23 @@ export function AuthProvider({ children }) {
     return auth.sendPasswordResetEmail(email);
   }
 
+  // function signup(email, password) {
+  //   return auth.createUserWithEmailAndPassword(email, password);
+  // }
+
+  // function signup(email, password) {
+  //   auth.createUserWithEmailAndPassword(email, password).then((cred) => {
+  //     console.log(cred);
+  //   });
+  // }
+
   function signup(email, password) {
-    return auth.createUserWithEmailAndPassword(email, password);
+    auth
+      .createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        db.collection("users").doc(user.uid).set({ email: { email } });
+      });
   }
 
   function updateEmail(email) {
@@ -56,6 +68,9 @@ export function AuthProvider({ children }) {
   }
 
   // FUNCTION FOR UPLOADING PROFILE PHOTO
+  // get handle to storage API
+  const storage = getStorage();
+
   async function upload(file, currentUser, setLoading) {
     // make reference to a file on firebase store database
     const fileRef = ref(storage, "profile-photos/" + currentUser.uid + ".png");

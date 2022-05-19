@@ -2,6 +2,7 @@
 
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
+// import { getFirestore } from "firebase/firestore";
 
 //store firebase config values. using values from .env.local file
 const firebaseConfig = {
@@ -16,5 +17,8 @@ const firebaseConfig = {
 
 //initialize firebase
 const app = firebase.initializeApp(firebaseConfig);
+
+// export const db = getFirestore(app);
+export const db = firebase.firestore();
 
 export default app;

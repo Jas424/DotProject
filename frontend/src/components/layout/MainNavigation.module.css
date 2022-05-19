@@ -106,7 +106,7 @@ nav li a:after {
 .logo {
   font-size: 2rem;
   color: white;
-  font-family: "Merriweather";
+  font-family: "Merriweather", serif;
 }
 
 .badge {

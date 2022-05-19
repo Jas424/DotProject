@@ -9,7 +9,7 @@ function SignupPage() {
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
 
-  // create one state where password and password conf are equal and one where they arent
+  // create a state to store error when password and password confirmation are not equal
   const [error, setError] = useState("");
 
   //set up a state that disables the "Sign up" button while user is signing up [true state]
@@ -96,8 +96,6 @@ function SignupPage() {
         </Card.Body>
       </Card>
 
-      {/* className: w-100 = span whole width */}
-      {/* className: mt-2 = margin top spacing */}
       <Card bg="secondary">
         <div className="d-grid gap-2">
           <Link to="/login">

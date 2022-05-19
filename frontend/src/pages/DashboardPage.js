@@ -17,6 +17,7 @@ function DashboardPage() {
   async function handleLogout() {
     try {
       await logout();
+      alert("LOGOUT SUCCESSFUL!");
       history("/login");
     } catch {
       console.log("FAILED TO LOG OUT");
@@ -55,14 +56,16 @@ function DashboardPage() {
           </div>
         </div>
 
-        <div>
+        <div className="d-grid gap-3">
+          {/* <Alert variant="secondary"> */}
           <center>
             <Link to="/login">
-              <Button variant="secondary" onClick={handleLogout}>
-                <font size="14">LOG OUT</font>
+              <Button variant="custom" onClick={handleLogout}>
+                LOG OUT
               </Button>
             </Link>
           </center>
+          {/* </Alert> */}
         </div>
       </AuthProvider>
     </>
