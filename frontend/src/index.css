@@ -124,14 +124,44 @@ h2 {
 }
 
 .card {
-  background-color: white;
-  border-radius: 4px;
-  /* alternative border radius to make the cards rounder
-  border-radius: 40%;*/
+  background-color: #aac6e1;
+  /* border-radius: 4px; */
+  /* alternative border radius to make the cards rounder*/
+  border-radius: 40%;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 1rem;
   width: 30rem;
+  margin: 2.7rem;
+}
 
+.card1 {
+  /* background-color: #3498db; */
+  background-color: #ffd071;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 30rem;
+  height: 680px;
+  margin: 2.7rem;
+}
+
+.card2 {
+  background-color: #f0776c;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 30rem;
+  height: 680px;
+  margin: 2.7rem;
+}
+
+.card3 {
+  background-color: #3498db;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  width: 30rem;
+  height: 680px;
   margin: 2.7rem;
 }
 

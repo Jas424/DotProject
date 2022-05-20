@@ -1,10 +1,14 @@
 import React from "react";
-import { Alert } from "react-bootstrap";
-import TeamMemberCard from "../components/TeamCard/TeamMemberCard";
+import { Alert, Card } from "react-bootstrap";
 
-import genericMalePhoto from "../components/images/genericMale.png";
-import genericFemalePhoto from "../components/images/genericFemale.png";
+//images
 import dotSmallLogo from "../components/layout/dot-small-logo.png";
+import ironman from "../components/images/ironman.jpg";
+import blackwidow from "../components/images/blackwidow.jpg";
+import captainamerica from "../components/images/captainamerica.jpg";
+import spiderman from "../components/images/spiderman.png";
+import hulk from "../components/images/hulk.jpg";
+import gamora from "../components/images/gamora.png";
 
 function AboutUsPage() {
   return (
@@ -16,28 +20,76 @@ function AboutUsPage() {
         </center>
       </Alert>
       <div className="flexbox-container">
-        <div>
+        {/* <div className="card1">
           <TeamMemberCard
             fullName="Agenor Rodriguez"
             teamPhoto={genericMalePhoto}
           />
+        </div> */}
+
+        <div className="card1">
+          <Card>
+            <Card.Img variant="top" src={ironman} />
+            <Card.Body></Card.Body>
+            <Card.Footer as="h3">Agenor Rodriguez</Card.Footer>
+          </Card>
         </div>
 
-        <div>
+        <div className="card2">
+          <Card>
+            <Card.Header as="h3">Jade Wing Ki Au</Card.Header>
+            <Card.Img variant="bottom" src={blackwidow} />
+            <Card.Body></Card.Body>
+          </Card>
+        </div>
+
+        <div className="card3">
+          <Card>
+            <Card.Img variant="top" src={captainamerica} />
+            <Card.Body></Card.Body>
+            <Card.Footer as="h3">Jaspreet Singh</Card.Footer>
+          </Card>
+        </div>
+
+        <div className="card1">
+          <Card>
+            <Card.Img variant="top" src={spiderman} />
+            <Card.Body></Card.Body>
+            <Card.Footer as="h3">Jonathan Yanez</Card.Footer>
+          </Card>
+        </div>
+
+        <div className="card2">
+          <Card>
+            <Card.Header as="h3">Jiten Lama</Card.Header>
+            <Card.Img variant="bottom" src={hulk} />
+            <Card.Body></Card.Body>
+          </Card>
+        </div>
+
+        <div className="card3">
+          <Card>
+            <Card.Img variant="top" src={gamora} />
+            <Card.Body></Card.Body>
+            <Card.Footer as="h3">Varsha Singh</Card.Footer>
+          </Card>
+        </div>
+
+        {/* <div className="card2">
           <TeamMemberCard
             fullName="Jade Wing Ki Au"
             teamPhoto={genericFemalePhoto}
           />
         </div>
 
-        <div>
+        <div className="card3">
           <TeamMemberCard
             fullName="Jaspreet Singh"
             teamPhoto={genericMalePhoto}
           />
-        </div>
+        </div> */}
 
-        <div>
+        {/* <div>
           <TeamMemberCard
             fullName="Jonathan Yanez"
             teamPhoto={genericMalePhoto}
@@ -53,7 +105,7 @@ function AboutUsPage() {
             fullName="Varsha Singh"
             teamPhoto={genericFemalePhoto}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
