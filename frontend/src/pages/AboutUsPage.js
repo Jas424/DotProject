@@ -51,7 +51,7 @@ function AboutUsPage() {
           </Card>
         </div>
 
-        <div className="card1">
+        <div className="card4">
           <Card>
             <Card.Img variant="top" src={spiderman} />
             <Card.Body></Card.Body>
@@ -59,7 +59,7 @@ function AboutUsPage() {
           </Card>
         </div>
 
-        <div className="card2">
+        <div className="card5">
           <Card>
             <Card.Header as="h3">Jiten Lama</Card.Header>
             <Card.Img variant="bottom" src={hulk} />
@@ -67,7 +67,7 @@ function AboutUsPage() {
           </Card>
         </div>
 
-        <div className="card3">
+        <div className="card6">
           <Card>
             <Card.Img variant="top" src={gamora} />
             <Card.Body></Card.Body>
