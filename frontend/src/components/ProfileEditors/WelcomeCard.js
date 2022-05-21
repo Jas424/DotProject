@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import firebase from "../../firebase";
-import { db } from "../../firebase";
+// import { db } from "../../firebase";
 // import { doc, onSnapshot } from "firebase/firestore";
 
 function WelcomeCard() {
   const { currentUser } = useAuth();
   // const currentUID = currentUser.uid;
   const [users, setUsers] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   // const uid = currentUser.uid;
 
   // const unsub = onSnapshot(doc(db, "users", currentUID), (doc) => {
@@ -18,7 +18,7 @@ function WelcomeCard() {
   // });
 
   // async function showCollection() {
-  //   const snapshot = await db.collection("user").doc({ uid }).get();
+  //   const snapshot = await db.collection("users").get();
   //   snapshot.forEach((doc) => {
   //     const item = doc.data();
   //     console.log(item.bio);
@@ -26,14 +26,14 @@ function WelcomeCard() {
   // }
 
   function getUsers() {
-    setLoading(true);
+    // setLoading(true);
     ref.onSnapshot((querySnapshot) => {
       const items = [];
       querySnapshot.forEach((doc) => {
         items.push(doc.data());
       });
       setUsers(items);
-      setLoading(false);
+      // setLoading(false);
     });
   }
 
@@ -56,16 +56,6 @@ function WelcomeCard() {
             <h4>{currentUser.email}</h4>
           </center>
         </Card.Body>
-
-        {users.map((users) => (
-          <div key={users.email}>
-            {/* <center> */}
-            <h5>NAME: {users.firstname}</h5>
-            <p>HOMETOWN: {users.hometown}</p>
-            <p>OCCUPATION: {users.occupation}</p>
-            {/* </center> */}
-          </div>
-        ))}
       </Card>
     </div>
   );

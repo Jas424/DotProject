@@ -16,12 +16,15 @@ import PrivateRoute from "./components/PrivateRoute";
 import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPageLoader";
 import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
 import InfoPageLoader from "./components/PageLoaders/InfoPageLoader";
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   return (
     <div>
       {/* render navigation bar */}
-      <MainNavigation />
+      <AuthProvider>
+        <MainNavigation />
+      </AuthProvider>
       {/* set up routes for navigation bar */}
       <Routes>
         <Route path="/" element={<AboutUsPage />} exact />

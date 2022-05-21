@@ -212,19 +212,19 @@ h2 {
 
 @keyframes cowmove {
   0% {
-    transform: translateX(0px) rotate(0deg);
+    transform: translateX(0rem) rotate(0deg);
   }
   30% {
-    transform: translateX(500px) rotate(90deg);
+    transform: translateX(10rem) rotate(90deg);
   }
   50% {
-    transform: translateX(500px) rotate(180deg);
+    transform: translateX(20rem) rotate(180deg);
   }
   80% {
-    transform: translateX(0px) rotate(270deg);
+    transform: translateX(10rem) rotate(270deg);
   }
   100% {
-    transform: translateX(0px) rotate(360deg);
+    transform: translateX(0rem) rotate(360deg);
   }
 }
 

@@ -15,6 +15,7 @@ function AboutUsPage() {
     <div className="d-grid gap-2">
       <Alert>
         <img className="dotAnimation" src={dotSmallLogo} alt="dot-small-logo" />
+
         <center>
           <h1>Meet The Dot Team</h1>
         </center>

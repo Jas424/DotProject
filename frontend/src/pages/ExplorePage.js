@@ -1,30 +1,50 @@
-import React from "react";
-import SignupPage from "./SignupPage";
-
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Alert, Card } from "react-bootstrap";
+import { db } from "../firebase";
+import { useAuth } from "../contexts/AuthContext";
+import firebase from "../firebase";
 
 function ExplorePage() {
-  const navigate = useNavigate();
-
-  function addNewUserHandler(newUserData) {
-    fetch("https://dot-project-f73b1-default-rtdb.firebaseio.com/users.json", {
-      method: "POST",
-      body: JSON.stringify(newUserData),
-      headers: {
-        "Content-type": "application/json",
-      },
-    }).then(() => {
-      navigate("/");
+  const ref = firebase.firestore().collection("users");
+  const [users, setUsers] = useState([]);
+  function getUsers() {
+    // setLoading(true);
+    ref.onSnapshot((querySnapshot) => {
+      const items = [];
+      querySnapshot.forEach((doc) => {
+        items.push(doc.data());
+      });
+      setUsers(items);
+      // setLoading(false);
     });
   }
-  return (
-    <section>
-      <center>
-        <h1>EXPLORE OTHER DOT USERS!</h1>
-      </center>
+  useEffect(() => {
+    getUsers();
+  }, []);
 
-      <SignupPage onAddUser={addNewUserHandler} />
-    </section>
+  return (
+    <>
+      <div className="d-grip gap-3">
+        <Alert>
+          <center>
+            <h1>EXPLORE OTHER DOT USERS!</h1>
+          </center>
+        </Alert>
+      </div>
+
+      <div className="flexbox-container">
+        {users.map((users) => (
+          <Card>
+            <div key={users.email}>
+              <h5>EMAIL: {users.email}</h5>
+              <p>HOMETOWN: {users.hometown}</p>
+              <p>OCCUPATION: {users.occupation}</p>
+            </div>
+          </Card>
+        ))}
+      </div>
+    </>
   );
+  //will use this to pull user information from the firebase database
 }
 export default ExplorePage;
