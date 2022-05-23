@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Card } from "react-bootstrap";
-import { db } from "../firebase";
-import { useAuth } from "../contexts/AuthContext";
 import firebase from "../firebase";
 
 function ExplorePage() {
@@ -39,6 +37,7 @@ function ExplorePage() {
               <h5>EMAIL: {users.email}</h5>
               <p>HOMETOWN: {users.hometown}</p>
               <p>OCCUPATION: {users.occupation}</p>
+              <img alt="avatar" src={users.photoURL}></img>
             </div>
           </Card>
         ))}

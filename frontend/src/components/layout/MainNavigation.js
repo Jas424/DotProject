@@ -1,5 +1,5 @@
 /* this component is the navigation bar at the top of the page */
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
 import dotSmallLogo from "./dot-small-logo.png";
 import React from "react";
@@ -9,7 +9,6 @@ import { Alert } from "react-bootstrap";
 function MainNavigation() {
   const { currentUser } = useAuth();
   const { logout } = useAuth();
-  const history = useNavigate();
 
   // logout button handler
   async function handleLogout() {

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
-import firebase from "../../firebase";
+// import firebase from "../../firebase";
 // import { db } from "../../firebase";
 // import { doc, onSnapshot } from "firebase/firestore";
 
 function WelcomeCard() {
   const { currentUser } = useAuth();
   // const currentUID = currentUser.uid;
-  const [users, setUsers] = useState([]);
+  // const [users, setUsers] = useState([]);
   // const [loading, setLoading] = useState(false);
   // const uid = currentUser.uid;
 
@@ -25,21 +25,21 @@ function WelcomeCard() {
   //   });
   // }
 
-  function getUsers() {
-    // setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc) => {
-        items.push(doc.data());
-      });
-      setUsers(items);
-      // setLoading(false);
-    });
-  }
+  // function getUsers() {
+  //   // setLoading(true);
+  //   ref.onSnapshot((querySnapshot) => {
+  //     const items = [];
+  //     querySnapshot.forEach((doc) => {
+  //       items.push(doc.data());
+  //     });
+  //     setUsers(items);
+  //     // setLoading(false);
+  //   });
+  // }
 
-  useEffect(() => {
-    getUsers();
-  }, []);
+  // useEffect(() => {
+  //   getUsers();
+  // }, []);
 
   // useEffect(() => {
   //   showCollection();
@@ -62,7 +62,7 @@ function WelcomeCard() {
 }
 
 //will use this to pull user information from the firebase database
-const ref = firebase.firestore().collection("users");
+// const ref = firebase.firestore().collection("users");
 // console.log(ref);
 
 export default WelcomeCard;

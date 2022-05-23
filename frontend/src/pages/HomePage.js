@@ -22,14 +22,14 @@ function HomePage() {
             <h1>WELCOME TO THE DOT DATING APP!</h1>
           </center>
         </Alert>
-        <p>
+        <h2>
           <center>
-            <h2>
+            <p>
               Sign up now and meet thousands of other people just like you that
               are looking for their perfect match!
-            </h2>
+            </p>
           </center>
-        </p>
+        </h2>
       </div>
 
       <center>

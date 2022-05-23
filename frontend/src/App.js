@@ -17,6 +17,7 @@ import ForgotPasswordPageLoader from "./components/PageLoaders/ForgotPasswordPag
 import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
 import InfoPageLoader from "./components/PageLoaders/InfoPageLoader";
 import { AuthProvider } from "./contexts/AuthContext";
+import SignupDetailsPage from "./pages/SignupDetailsPage";
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
             exact
           />
           <Route path="/infopage" element={<InfoPageLoader />} exact />
+          <Route path="/signupdetails" element={<SignupDetailsPage />} exact />
         </Route>
       </Routes>
     </div>

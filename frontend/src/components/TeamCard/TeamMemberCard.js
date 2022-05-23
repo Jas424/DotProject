@@ -10,11 +10,11 @@ import { Image } from "react-bootstrap";
 function TeamMemberCard(props) {
   const [TeamCardProfileIsOpen, setTeamCardProfileIsOpen] = useState(false);
 
-  function deleteHandler() {
+  function openCard() {
     setTeamCardProfileIsOpen(true);
   }
 
-  function closeTeamCardProfileHandler() {
+  function closeCard() {
     setTeamCardProfileIsOpen(false);
   }
 
@@ -26,7 +26,7 @@ function TeamMemberCard(props) {
           <center>{props.fullName}</center>
         </h2>
         <div className="actions">
-          <button className="btn" onClick={deleteHandler}>
+          <button className="btn" onClick={openCard}>
             Learn More
           </button>
         </div>
@@ -36,8 +36,8 @@ function TeamMemberCard(props) {
               "FirstName LastName is JobTitle at Dot. They are from HomeTown and were born in BirthYear."
             }
             /*aboutMe={aboutMeHandler}*/
-            onCancel={closeTeamCardProfileHandler}
-            onConfirm={closeTeamCardProfileHandler}
+            onCancel={closeCard}
+            onConfirm={closeCard}
           />
         )}
       </div>
@@ -47,7 +47,7 @@ function TeamMemberCard(props) {
 
 /*import Backdrop from "./Backdrop"; <-- not needed for now, but will use this for a modal
 /*This will be used later to open a back drop when "LEARN MORE" button is clicked"
-{TeamCardProfileIsOpen && <Backdrop onCancel={closeTeamCardProfileHandler} />}
+{TeamCardProfileIsOpen && <Backdrop onCancel={closeCard} />}
 */
 
 export default TeamMemberCard;

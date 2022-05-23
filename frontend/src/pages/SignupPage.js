@@ -8,6 +8,7 @@ function SignupPage() {
   const passwordRef = useRef();
   const passwordConfirmRef = useRef();
   const { signup } = useAuth();
+  const { login } = useAuth();
 
   // create a state to store error when password and password confirmation are not equal
   const [error, setError] = useState("");
@@ -31,21 +32,30 @@ function SignupPage() {
 
     try {
       // before we try anything, set error back to an empty string
-      setError("");
-      // set up a loading state, so when user is signing up, they can't keep clicking the "sign up" button and create multiple accounts
-      setLoading(true);
+      await setError("");
+
+      // set up a loading state, so when user is signing up, they can't keep clicking the "sign up" button
+      await setLoading(true);
 
       // call the signup function created in AuthContent and pass in the email and password
       await signup(emailRef.current.value, passwordRef.current.value);
 
-      alert("ACCOUNT CREATED! PLEASE LOG IN.");
-      navigate("/login");
+      alert("ACCOUNT CREATED! PLEASE FILL OUT YOUR PROFILE");
+
+      // when signup is done, re-enable the signup button
+      await setLoading(false);
+
+      //log in after 1 second. this delay is needed because the signup function takes time to create the user
+      await setTimeout(
+        () => login(emailRef.current.value, passwordRef.current.value),
+        1000
+      );
+      //wait one more second and then log in
+      await setTimeout(() => navigate("/signupdetails"), 1100);
     } catch {
       console.log("SIGNUP FAILED!");
       setError("FAILED TO CREATE AN ACCOUNT");
     }
-    // when signup is done, re-enable the signup function
-    setLoading(false);
   }
 
   return (

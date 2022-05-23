@@ -2,7 +2,7 @@
 
 import React, { useContext, useEffect, useState } from "react";
 
-import firebase, { db } from "../firebase";
+import firebase from "../firebase";
 
 // firebase authentication module
 import "firebase/compat/auth";
@@ -40,20 +40,25 @@ export function AuthProvider({ children }) {
   //   return auth.createUserWithEmailAndPassword(email, password);
   // }
 
-  // function signup(email, password) {
-  //   auth.createUserWithEmailAndPassword(email, password).then((cred) => {
-  //     console.log(cred);
-  //   });
-  // }
-
   function signup(email, password) {
-    auth
-      .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        db.collection("users").doc(user.uid).set({ email });
-      });
+    auth.createUserWithEmailAndPassword(email, password).then((cred) => {
+      console.log(cred);
+    });
   }
+
+  // function signup(email, password) {
+  //   auth
+  //     .createUserWithEmailAndPassword(email, password)
+  //     .then((userCredential) => {
+  //       const user = userCredential.user;
+  //       setTimeout(
+  //         () => db.collection("users").doc(user.uid).set({ email }),
+  //         1000
+  //       );
+  //       console.log("ACCOUNT CREATED!");
+  //       console.log(userCredential);
+  //     });
+  // }
 
   function updateEmail(email) {
     return currentUser.updateEmail(email);
