@@ -1,23 +1,18 @@
 import React from "react";
 import { Alert, Card } from "react-bootstrap";
 
-// import UserCard from "../components/UserCard/UserCard";
-// import userProfile from "../components/images/genericMale2.jpg";
-
-import homepagePhoto from "../components/images/dot-homepage-image.jpg";
-
-import dotSmallLogo from "../components/layout/dot-small-logo.png";
+//import online images
+let images = [
+  "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fdot-small-logo.png?alt=media&token=d90c0c0e-fd1f-4fe3-82ce-4b2e76ca5cee", //small dot logo
+  "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fdot-homepage-image.jpg?alt=media&token=845e83c7-8364-49c3-8be8-6bcd9bd1cb4c", //bg image
+];
 
 function HomePage() {
   return (
     <div className="homepageDiv">
       <div className="d-grid gap-2">
         <Alert>
-          <img
-            className="dotAnimation"
-            src={dotSmallLogo}
-            alt="dot-small-logo"
-          />
+          <img className="dotAnimation" src={images[0]} alt="dot-small-logo" />
           <center>
             <h1>WELCOME TO THE DOT DATING APP!</h1>
           </center>
@@ -35,7 +30,7 @@ function HomePage() {
       <center>
         <Alert>
           <Card style={{ width: "800px" }}>
-            <Card.Img src={homepagePhoto} width="50px" />
+            <Card.Img src={images[1]} width="50px" />
             <Card.Body>
               <Card.Title>FIND YOUR PERFECT MATCH TODAY!</Card.Title>
               <Card.Text>
@@ -47,21 +42,6 @@ function HomePage() {
           </Card>
         </Alert>
       </center>
-
-      {/* <div class="flexbox-container">
-        <div>
-          <UserCard fullName="Jane Doe" userPhoto={userProfile} />
-        </div>
-        <div>
-          <UserCard fullName="John Doe" userPhoto={userProfile} />
-        </div>
-        <div>
-          <UserCard fullName="Tom Cruise" userPhoto={userProfile} />
-        </div>
-        <div>
-          <UserCard fullName="Angelina Jolie" userPhoto={userProfile} />
-        </div>
-      </div> */}
     </div>
   );
 }

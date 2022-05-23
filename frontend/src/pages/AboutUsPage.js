@@ -1,8 +1,7 @@
 import React from "react";
 import { Alert, Card } from "react-bootstrap";
 
-//images
-import dotSmallLogo from "../components/layout/dot-small-logo.png";
+//import images
 
 let avatars = [
   "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fironman.jpg?alt=media&token=255b1ffd-49e7-4bf6-844e-afcccdac9865",
@@ -11,13 +10,14 @@ let avatars = [
   "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fspiderman.png?alt=media&token=5203de70-24ac-4a35-be71-80968dc41e95",
   "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fblackwidow.jpg?alt=media&token=ab26d7b9-5c88-4152-a1c6-d8a5d9a285c3",
   "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fhulk.jpg?alt=media&token=bc775d03-0c32-4c0b-98df-d7a47ff00a63",
+  "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fdot-small-logo.png?alt=media&token=d90c0c0e-fd1f-4fe3-82ce-4b2e76ca5cee",
 ];
 
 function AboutUsPage() {
   return (
     <div className="d-grid gap-2">
       <Alert>
-        <img className="dotAnimation" src={dotSmallLogo} alt="dot-small-logo" />
+        <img className="dotAnimation" src={avatars[6]} alt="dot-small-logo" />
 
         <center>
           <h1>Meet The Dot Team</h1>
@@ -91,38 +91,6 @@ function AboutUsPage() {
             <Card.Body></Card.Body>
           </Card>
         </div>
-
-        {/* <div className="card2">
-          <TeamMemberCard
-            fullName="Jade Wing Ki Au"
-            teamPhoto={genericFemalePhoto}
-          />
-        </div>
-
-        <div className="card3">
-          <TeamMemberCard
-            fullName="Jaspreet Singh"
-            teamPhoto={genericMalePhoto}
-          />
-        </div> */}
-
-        {/* <div>
-          <TeamMemberCard
-            fullName="Jonathan Yanez"
-            teamPhoto={genericMalePhoto}
-          />
-        </div>
-
-        <div>
-          <TeamMemberCard fullName="Jiten Lama" teamPhoto={genericMalePhoto} />
-        </div>
-
-        <div>
-          <TeamMemberCard
-            fullName="Varsha Singh"
-            teamPhoto={genericFemalePhoto}
-          />
-        </div> */}
       </div>
     </div>
   );

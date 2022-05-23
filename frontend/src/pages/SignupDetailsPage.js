@@ -81,6 +81,10 @@ function SignupDetailsPage() {
           </Form.Group>
         </Card>
 
+        <Card>
+          <Card.Header as="h4"></Card.Header>
+        </Card>
+
         <Form.Group id="location" controlId="formLocation">
           <Form.Label>WHAT CITY DO YOU LIVE IN?</Form.Label>
           <Form.Control type="text" ref={locationRef} required />

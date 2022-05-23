@@ -1,10 +1,14 @@
 /* this component is the navigation bar at the top of the page */
+import React from "react";
+import { Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import classes from "./MainNavigation.module.css";
-import dotSmallLogo from "./dot-small-logo.png";
-import React from "react";
 import { useAuth } from "../../contexts/AuthContext";
-import { Alert } from "react-bootstrap";
+
+//import online images
+let images = [
+  "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2Fdot-small-logo.png?alt=media&token=d90c0c0e-fd1f-4fe3-82ce-4b2e76ca5cee",
+];
 
 function MainNavigation() {
   const { currentUser } = useAuth();
@@ -64,7 +68,7 @@ function MainNavigation() {
         <Link to="/homepage" id={classes.dotCornerLogo}>
           <img
             className={classes.dotSmallLogo}
-            src={dotSmallLogo}
+            src={images[0]}
             alt="dot-small-logo"
           />{" "}
           DOT <font size="3"> </font>

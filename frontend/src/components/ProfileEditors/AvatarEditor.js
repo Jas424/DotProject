@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
-import genericPhoto from "../images/genericPerson.png";
+
+//import online images
+let images = [
+  "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2FgenericPerson.png?alt=media&token=4d05e9f9-6125-4f40-92d0-999b33bd2fc7", //generic person image
+];
 
 function AvatarEditor() {
   const [loading, setLoading] = useState(false);
   const [photo, setPhoto] = useState(null);
   const { currentUser, upload, updateProfile } = useAuth();
-  const [photoURL, setPhotoURL] = useState(genericPhoto);
+  const [photoURL, setPhotoURL] = useState(images[0]);
 
   // "choose file" button handler
   function handleBrowse(e) {

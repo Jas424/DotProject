@@ -44,6 +44,5 @@ function ExplorePage() {
       </div>
     </>
   );
-  //will use this to pull user information from the firebase database
 }
 export default ExplorePage;
