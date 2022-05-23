@@ -41,6 +41,17 @@ function MainNavigation() {
     }
   }
 
+  function showLogout() {
+    if (!currentUser) {
+      return (
+        <li>
+          <Link to="/login">LOGIN</Link>
+        </li>
+      );
+    }
+  }
+
+  //show an Alert box when the user is logged in
   function showLoginStatus() {
     if (currentUser) {
       return <Alert>STATUS: LOGGED IN</Alert>;
@@ -64,7 +75,7 @@ function MainNavigation() {
 
       <nav>
         <ul>
-          {/* dashboard will only render if a user is logged in */}
+          {/* only render dashboard and explore buttons if a user is logged in */}
           {showDashboardButtons()}
 
           <li>
@@ -73,12 +84,9 @@ function MainNavigation() {
           <li>
             <Link to="/signup">SIGN UP</Link>
           </li>
-          <li>
-            <Link to="/login">LOG IN</Link>
-          </li>
-          {/* <li> */}
-          {/* <Link to="/explore">EXPLORE</Link> */}
-          {/* </li> */}
+
+          {/* only render Logout button if user is logged in */}
+          {showLogout()}
 
           <li>
             <Link to="/homepage">HOME PAGE</Link>
