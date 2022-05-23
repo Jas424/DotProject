@@ -24,9 +24,13 @@ body {
     background-position: 0% 50%;
   }
 }
+.p{
+  text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
+}
 
 h1 {
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
+  color:#000000;
   font-family: "Merriweather", serif;
 }
 h2 {
@@ -104,6 +108,7 @@ h2 {
   width: 100px;
   background-color: rgba(43, 140, 129, 255);
   color: rgba(43, 140, 129, 255);
+ 
 }
 
 .btn:hover {
@@ -132,6 +137,12 @@ h2 {
   padding: 1rem;
   width: 30rem;
   margin: 2.7rem;
+}
+.card-title{
+  color:#000000;
+}
+.card-text{
+  color:#000000;
 }
 
 .card1 {
@@ -304,6 +315,8 @@ h2 {
   padding: 0 10px;
   font-weight: 600;
 }
+
+
 
 /* alternative button style
 .btn {
