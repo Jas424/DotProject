@@ -44,11 +44,15 @@ function ExplorePage() {
                 </center>
               </Card.Header>
               <Card.Body>
-                <p>AGE: {users.age}</p>
-                <p>GENDER: {users.gender} </p>
-                <p>LOCATION: {users.location}</p>
-                <p>LOOKING FOR: {users.seeking}</p>
-                <p>OCCUPATION: {users.occupation}</p>
+                <h5>
+                  <center>
+                    AGE: {users.age} &nbsp; &nbsp; &nbsp; GENDER: {users.gender}
+                  </center>
+                </h5>
+                <p></p>
+                <h5>LOCATION: {users.countryName}</h5>
+                <h5>LOOKING FOR: {users.seeking}</h5>
+                <h5>OCCUPATION: {users.occupation}</h5>
                 <center>
                   <img
                     alt="avatar"

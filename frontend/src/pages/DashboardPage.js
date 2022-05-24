@@ -1,28 +1,12 @@
 import React from "react";
-import { AuthProvider, useAuth } from "../contexts/AuthContext";
-import { useNavigate } from "react-router-dom";
-import AvatarEditor from "../components/ProfileEditors/AvatarEditorCard";
+import { AuthProvider } from "../contexts/AuthContext";
+import AvatarEditorCard from "../components/ProfileEditors/AvatarEditorCard";
 import BioCard from "../components/ProfileEditors/BioCard";
 import AccountEditorCard from "../components/ProfileEditors/AccountEditorCard.js";
 import WelcomeCard from "../components/ProfileEditors/WelcomeCard";
 import MyProfileCard from "../components/ProfileEditors/MyProfileCard";
-import AvatarEditorCard from "../components/ProfileEditors/AvatarEditorCard";
 
 function DashboardPage() {
-  const { logout } = useAuth();
-  const history = useNavigate();
-
-  // logout button handler
-  async function handleLogout() {
-    try {
-      await logout();
-      alert("LOGOUT SUCCESSFUL!");
-      history("/login");
-    } catch {
-      console.log("FAILED TO LOG OUT");
-    }
-  }
-
   return (
     <AuthProvider>
       <div className="Parent">

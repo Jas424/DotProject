@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import firebase, { db } from "../../firebase";
+import { db } from "../../firebase";
 
 import { useAuth } from "../../contexts/AuthContext";
-import { Alert, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 
 function MyProfileCard() {
   const { currentUser } = useAuth();
-  const uid = currentUser.uid;
-  const ref = firebase.firestore().collection("user").doc(uid);
   const [userData, setUserData] = useState([]);
 
   function getUserData() {
@@ -37,19 +35,13 @@ function MyProfileCard() {
                   </center>
                 </p>
               </h3>
-              <p>AGE: {userData.age}</p>
-              <p>GENDER: {userData.gender} </p>
-              <p>LOCATION: {userData.location}</p>
-              <p>LOOKING FOR: {userData.seeking}</p>
-              <p>OCCUPATION: {userData.occupation}</p>
-              {/* <center>
-                <img
-                  alt="avatar"
-                  src={userData.photoURL}
-                  height="200px"
-                  width="200px"
-                />
-              </center> */}
+              <div className="myProfileCardBody">
+                <h5>AGE: {userData.age}</h5>
+                <h5>GENDER: {userData.gender} </h5>
+                <h5>LOCATION: {userData.countryName}</h5>
+                <h5>LOOKING FOR: {userData.seeking}</h5>
+                <h5>OCCUPATION: {userData.occupation}</h5>
+              </div>
             </Card.Body>
             <Card.Img
               variant="bottom"

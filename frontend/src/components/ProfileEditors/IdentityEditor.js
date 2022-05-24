@@ -9,13 +9,9 @@ function IdentityEditor() {
   const [identityFeedback, setIdentityFeedback] = useState("");
   const firstnameRef = useRef();
   const lastnameRef = useRef();
-  // const bioProfileRef = useRef();
   const ageRef = useRef();
-  const favBookRef = useRef();
   const genderRef = useRef();
   const ethnicityRef = useRef();
-  const religionRef = useRef();
-  const favMovieRef = useRef();
 
   const [loading, setLoading] = useState(false);
 
@@ -63,8 +59,12 @@ function IdentityEditor() {
           <Form.Control type="text" ref={ethnicityRef} />
         </Form.Group>
 
+        <p />
+
         <Form.Group id="gender" controlId="formGender">
-          <Form.Label>WHAT GENDER DO YOU IDENTIFY AS?</Form.Label>
+          <Form.Label>
+            <h5>WHAT GENDER DO YOU IDENTIFY AS?</h5>
+          </Form.Label>
           {/* <Form.Control ref={genderRef} required /> */}
           {["radio"].map((type) => (
             <div key={`inline-${type}`} className="mb-3">

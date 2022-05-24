@@ -7,6 +7,7 @@ import { AuthProvider } from "../../contexts/AuthContext";
 //Global Variables
 let countries;
 let countryCode;
+let countryName;
 
 function LocationEditor() {
   //get the current user so we can update his location
@@ -50,8 +51,8 @@ function LocationEditor() {
     );
     const currentLocation = String(userDetails.location);
     console.log("userdetails", currentLocation);
-    document.getElementById("countries").value = currentLocation;
-    displayCountryInfo(currentLocation);
+    document.getElementById("countries").value = "USA";
+    displayCountryInfo("USA");
   }
 
   //Display the flag of the selected country
@@ -64,6 +65,7 @@ function LocationEditor() {
       "#flag-container img"
     ).alt = `flag of ${countryData.name}`;
     countryCode = `${countryData.alpha3Code}`;
+    countryName = `${countryData.name}`;
     document.getElementById("capital").innerHTML = countryData.capital;
   }
 
@@ -71,6 +73,7 @@ function LocationEditor() {
   function submitHandler() {
     db.collection("users").doc(currentUser.uid).update({
       location: countryCode,
+      countryName: countryName,
     });
     setLocationFeedback("CHANGES SAVED!");
     setTimeout(() => {

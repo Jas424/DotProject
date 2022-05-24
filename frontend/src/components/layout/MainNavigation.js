@@ -38,7 +38,7 @@ function MainNavigation() {
             <Link to="/explore">EXPLORE</Link>
           </li>
           <li>
-            <Link to="/signupdetails">PROFILE</Link>
+            <Link to="/signupdetails">EDIT</Link>
           </li>
           <li>
             <Link to="/dashboard">DASHBOARD</Link>
