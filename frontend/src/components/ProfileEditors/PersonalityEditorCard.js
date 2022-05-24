@@ -78,27 +78,14 @@ function PersonalityEditorCard() {
           ))}
         </Form.Group>
 
-        <Form.Group id="religion" controlId="formReligion">
-          <Form.Label>WHAT ARE YOU LOOKING FOR?</Form.Label>
-          <Form.Control
-            type="text"
-            ref={lookingForRef}
-            placeholder="FRIENDSHIP, DATING, SERIOUS RELATIONSHIP"
-          />
-        </Form.Group>
-
         <Form.Group id="book" controlId="formBook">
           <Form.Label>WHAT IS YOUR FAVORITE BOOK?</Form.Label>
-          <Form.Control type="text" ref={favBookRef} placeholder="(OPTIONAL)" />
+          <Form.Control type="text" ref={favBookRef} />
         </Form.Group>
 
         <Form.Group id="movie" controlId="formMovie">
           <Form.Label>WHAT IS YOUR FAVORITE MOVIE?</Form.Label>
-          <Form.Control
-            type="text"
-            ref={favMovieRef}
-            placeholder="(OPTIONAL)"
-          />
+          <Form.Control type="text" ref={favMovieRef} />
         </Form.Group>
         <p />
         <Button disabled={loading} type="submit">

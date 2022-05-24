@@ -39,8 +39,8 @@ function MyProfileCard() {
                 <h5>AGE: {userData.age}</h5>
                 <h5>GENDER: {userData.gender} </h5>
                 <h5>LOCATION: {userData.countryName}</h5>
-                <h5>LOOKING FOR: {userData.seeking}</h5>
-                <h5>OCCUPATION: {userData.occupation}</h5>
+                <h5>LOOKING FOR: {userData.lookingFor}</h5>
+                <h5>OCCUPATION: {userData.job}</h5>
               </div>
             </Card.Body>
             <Card.Img
