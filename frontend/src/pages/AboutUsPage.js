@@ -40,9 +40,9 @@ function AboutUsPage() {
         {/* Jas's Card */}
         <div className="card3">
           <Card>
-            <Card.Footer as="h3">
+            <Card.Header as="h3">
               <center>Jaspreet Singh</center>
-            </Card.Footer>
+            </Card.Header>
             <Card.Img variant="bottom" src={avatars[2]} />
             <Card.Body></Card.Body>
           </Card>
@@ -62,9 +62,9 @@ function AboutUsPage() {
         {/* Jade's Card */}
         <div className="card2">
           <Card>
-            <Card.Footer as="h3">
+            <Card.Header as="h3">
               <center>Jade Wing Ki Au</center>
-            </Card.Footer>
+            </Card.Header>
             <Card.Img variant="bottom" src={avatars[1]} />
             <Card.Body></Card.Body>
           </Card>
@@ -84,9 +84,9 @@ function AboutUsPage() {
         {/* Jiten's Card */}
         <div className="card6">
           <Card>
-            <Card.Footer as="h3">
+            <Card.Header as="h3">
               <center>Jiten Lama</center>
-            </Card.Footer>
+            </Card.Header>
             <Card.Img variant="bottom" src={avatars[5]} />
             <Card.Body></Card.Body>
           </Card>

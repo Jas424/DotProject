@@ -141,27 +141,19 @@ h2 {
   margin:auto;
   width: 100%;
   height: 100%;
-  
   border-radius: 15%;
 }
 
 .card-header:first-child {
   box-shadow: 0 2px 2px #00000029;
   border-radius: 15%;
-  background-color: rgb(108, 117, 125);
-  border-radius: 8%;
+  background-color: rgb(108, 117, 125)!important;
   
-  
-  
-}
-
-.text-center{
-  color:rgb(255, 248, 248);
 }
 
 
 .card-title {
-  color: #000000;
+  color: #ffffff;
 }
 .card-text {
   color: #000000;
@@ -177,9 +169,7 @@ h2 {
   padding: 1rem;
   width: 30rem;
   height: 680px;
-  margin: auto;
-  justify-content: left;
- 
+  margin: 2.7rem;
 }
 
 .card2 {
@@ -189,7 +179,7 @@ h2 {
   padding: 1rem;
   width: 30rem;
   height: 680px;
-  margin:auto;
+  margin: 2.7rem;
 }
 
 .card3 {
@@ -219,7 +209,7 @@ h2 {
   padding: 1rem;
   width: 30rem;
   height: 680px;
-  margin: auto;
+  margin: 2.7rem;
 }
 
 .card6 {
