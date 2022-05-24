@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Card } from "react-bootstrap";
+import { Alert, Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
 import { db } from "../../firebase";
 
@@ -11,6 +11,7 @@ let images = [
 function AvatarEditor() {
   const [loading, setLoading] = useState(false);
   const [photo, setPhoto] = useState(null);
+  const [avatarFeedback, setAvatarFeedback] = useState("");
   const { currentUser, upload, updateProfile } = useAuth();
   const [photoURL, setPhotoURL] = useState(images[0]);
 
@@ -22,7 +23,8 @@ function AvatarEditor() {
     }
   }
 
-  // "confirm" button handler
+  // "confirm" button handler will upload the picture to firebase, update the user's photoURL
+  // give the user feedback, then clear feedback after 5 seconds
   async function handleConfirm() {
     console.log("UPLOADING");
     const url = await upload(photo, currentUser, setLoading);
@@ -31,10 +33,13 @@ function AvatarEditor() {
     db.collection("users").doc(currentUser.uid).update({
       photoURL: url,
     });
+    setAvatarFeedback("CHANGES SAVED!");
+    setTimeout(() => {
+      setAvatarFeedback("");
+    }, 5000);
   }
 
-  // using useEffect to control how many times we fetch data from API
-  // if current user is not null and photoURL is not null, then set the photo, otherwise keep the generic photo
+  // if current user is not null and photoURL is not null, then update the photoURL, otherwise keep the generic photo
   useEffect(() => {
     if (currentUser && currentUser.photoURL) {
       setPhotoURL(currentUser.photoURL);
@@ -69,6 +74,12 @@ function AvatarEditor() {
             <button disabled={loading || !photo} onClick={handleConfirm}>
               CONFIRM
             </button>
+            <p />
+            {avatarFeedback && (
+              <Alert>
+                <center>{avatarFeedback}</center>
+              </Alert>
+            )}
           </center>
         </Card.Body>
       </Card>

@@ -55,7 +55,10 @@ export function AuthProvider({ children }) {
         const user = userCredential.user;
         setTimeout(
           () =>
-            db.collection("users").doc(user.uid).set({ email, location: "" }),
+            db
+              .collection("users")
+              .doc(user.uid)
+              .set({ email, uid: user.uid, location: "" }),
           1000
         );
         console.log("ACCOUNT CREATED!");

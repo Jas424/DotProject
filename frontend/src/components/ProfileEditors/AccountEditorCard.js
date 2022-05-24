@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function ProfileEditor() {
+function AccountEditorCard() {
   return (
     <Card>
       <Card.Header as="h3">
@@ -10,12 +10,10 @@ function ProfileEditor() {
       </Card.Header>
       <Card.Body>
         <Link to="/editprofile">
-          <h4>
-            <center>EDIT EMAIL / PASSWORD</center>
-          </h4>
+          <h4>EDIT EMAIL / PASSWORD</h4>
         </Link>
       </Card.Body>
     </Card>
   );
 }
-export default ProfileEditor;
+export default AccountEditorCard;

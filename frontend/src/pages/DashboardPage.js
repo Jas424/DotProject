@@ -1,13 +1,11 @@
 import React from "react";
-import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import LocationEditor from "../components/ProfileEditors/LocationEditor";
 import AvatarEditor from "../components/ProfileEditors/AvatarEditor";
 import BioCard from "../components/ProfileEditors/BioCard";
-import ProfileEditor from "../components/ProfileEditors/ProfileEditor.js";
+import AccountEditorCard from "../components/ProfileEditors/AccountEditorCard.js";
 import WelcomeCard from "../components/ProfileEditors/WelcomeCard";
+import MyProfileCard from "../components/ProfileEditors/MyProfileCard";
 
 function DashboardPage() {
   const { logout } = useAuth();
@@ -25,50 +23,38 @@ function DashboardPage() {
   }
 
   return (
-    <>
-      <AuthProvider>
-        <div className="flexbox-container">
-          {/* ACCOUNT EDITOR CARD */}
-          <div>
-            <ProfileEditor />
-          </div>
+    <AuthProvider>
+      <div className="Parent">
+        <div className="child1">
+          <div className="flexbox-container">
+            {/* ACCOUNT EDITOR CARD */}
+            <div>
+              <AccountEditorCard />
+            </div>
 
-          {/* WELCOME CARD */}
-          <div>
-            <WelcomeCard />
-          </div>
-        </div>
+            {/* WELCOME CARD */}
+            <div>
+              <WelcomeCard />
+            </div>
 
-        <div className="flexbox-container">
-          {/* AVATAR CARD */}
-          <div>
-            <AvatarEditor />
-          </div>
+            {/* AVATAR CARD */}
+            <div>
+              <AvatarEditor />
+            </div>
 
-          {/* LOCATION CARD */}
-          <div>
-            <LocationEditor />
-          </div>
-
-          {/* BIO AND INTERESTS CARD */}
-          <div className="bg-image hover-zoom" style={{ maxWidth: "22rem" }}>
-            <BioCard />
+            {/* BIO AND INTERESTS CARD */}
+            <div className="bg-image hover-zoom" style={{ maxWidth: "22rem" }}>
+              <BioCard />
+            </div>
           </div>
         </div>
 
-        <div className="d-grid gap-3">
-          {/* <Alert variant="secondary"> */}
-          <center>
-            <Link to="/login">
-              <Button variant="custom" onClick={handleLogout}>
-                LOG OUT
-              </Button>
-            </Link>
-          </center>
-          {/* </Alert> */}
+        <div className="child2">
+          {/* MY PROFILE CARD */}
+          <MyProfileCard />
         </div>
-      </AuthProvider>
-    </>
+      </div>
+    </AuthProvider>
   );
 }
 export default DashboardPage;

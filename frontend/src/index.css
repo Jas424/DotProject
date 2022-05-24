@@ -315,6 +315,22 @@ h2 {
   font-weight: 600;
 }
 
+.Parent {
+  display: flex;
+  flex-direction: row;
+}
+
+.child1 {
+  width: 65%;
+  height: 100vh;
+  text-align: right;
+}
+
+.child2 {
+  width: 35%;
+  height: 100vh;
+}
+
 /* alternative button style
 .btn {
   font: inherit;

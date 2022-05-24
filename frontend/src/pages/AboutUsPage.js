@@ -60,7 +60,7 @@ function AboutUsPage() {
         </div>
 
         {/* Jade's Card */}
-        <div className="card2">
+        <div className="card5">
           <Card>
             <Card.Header as="h3">
               <center>Jade Wing Ki Au</center>
@@ -71,7 +71,7 @@ function AboutUsPage() {
         </div>
 
         {/* Varsha's Card */}
-        <div className="card5">
+        <div className="card2">
           <Card>
             <Card.Img variant="top" src={avatars[4]} />
             <Card.Body></Card.Body>

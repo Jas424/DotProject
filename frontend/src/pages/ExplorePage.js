@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Alert, Card } from "react-bootstrap";
+import { useAuth } from "../contexts/AuthContext";
 import firebase from "../firebase";
 
 function ExplorePage() {
+  const { currentUser } = useAuth();
+  const uid = currentUser.uid;
+  console.log(uid);
   const ref = firebase.firestore().collection("users");
   const [users, setUsers] = useState([]);
   function getUsers() {
@@ -33,7 +37,7 @@ function ExplorePage() {
       <div className="flexbox-container">
         {users.map((users) => (
           <Card>
-            <div key={users.email}>
+            <div key={users.uid}>
               <Card.Header as="h5">
                 <center>
                   {users.firstname} {users.lastname}

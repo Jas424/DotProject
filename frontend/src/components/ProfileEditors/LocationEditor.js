@@ -1,16 +1,30 @@
-import React from "react";
-import { Button, Card } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Alert, Button, Card } from "react-bootstrap";
 import { db } from "../../firebase";
 import { useAuth } from "../../contexts/AuthContext";
 import { AuthProvider } from "../../contexts/AuthContext";
 
 //Global Variables
 let countries;
-let countryName;
+let countryCode;
 
 function LocationEditor() {
   //get the current user so we can update his location
   const { currentUser } = useAuth();
+  const [locationFeedback, setLocationFeedback] = useState("");
+  const [userDetails, setUserDetails] = useState("");
+
+  //pull current user data and check the current location value
+  function getUserData() {
+    db.collection("users")
+      .doc(currentUser.uid)
+      .get()
+      .then((snapshot) => setUserDetails(snapshot.data()));
+  }
+
+  useEffect(() => {
+    getUserData();
+  }, []);
 
   //Retrieve data from API and put it in JSON format
   fetch("https://restcountries.com/v2/all")
@@ -19,22 +33,25 @@ function LocationEditor() {
     .catch((err) => alert("Error: " + err));
 
   //Populate the selection list with the list of countries from the API
-  function initialize(countriesData) {
+  async function initialize(countriesData) {
     countries = countriesData;
+
     let options = "";
-    const countriesList = document.getElementById("countries");
+    const countriesList = await document.getElementById("countries");
     countries.forEach(
       (country) =>
-        (options += `<option value="${country.alpha3Code}">${country.name}</option>`)
+        (options += `
+      
+      <option value="${country.alpha3Code}">${country.name}</option>`)
     );
-    // if (currentUser.location !== "") {
-    //   <option selected={currentUser.location}></option>;
-    // }
     countriesList.innerHTML = options;
     countriesList.addEventListener("change", (event) =>
       displayCountryInfo(event.target.value)
     );
-    displayCountryInfo("AFG");
+    const currentLocation = String(userDetails.location);
+    console.log("userdetails", currentLocation);
+    document.getElementById("countries").value = currentLocation;
+    displayCountryInfo(currentLocation);
   }
 
   //Display the flag of the selected country
@@ -46,15 +63,19 @@ function LocationEditor() {
     document.querySelector(
       "#flag-container img"
     ).alt = `flag of ${countryData.name}`;
-    countryName = `${countryData.name}`;
+    countryCode = `${countryData.alpha3Code}`;
     document.getElementById("capital").innerHTML = countryData.capital;
   }
 
   //when user clicks submit, update the location data of the current user
   function submitHandler() {
     db.collection("users").doc(currentUser.uid).update({
-      location: countryName,
+      location: countryCode,
     });
+    setLocationFeedback("CHANGES SAVED!");
+    setTimeout(() => {
+      setLocationFeedback("");
+    }, 5000);
   }
 
   return (
@@ -77,6 +98,12 @@ function LocationEditor() {
           </div>
         </Card.Body>
         <Button onClick={submitHandler}>SET LOCATION</Button>;
+        <p />
+        {locationFeedback && (
+          <Alert>
+            <center>{locationFeedback}</center>
+          </Alert>
+        )}
       </Card>
     </AuthProvider>
   );

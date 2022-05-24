@@ -6,7 +6,6 @@ import { AuthProvider } from "./contexts/AuthContext";
 import MainNavigation from "./components/layout/MainNavigation";
 
 import AboutUsPage from "./pages/AboutUsPage";
-import ExplorePage from "./pages/ExplorePage";
 import HomePage from "./pages/HomePage";
 // import SignupDetailsPage from "./pages/SignupDetailsPage";
 
@@ -19,6 +18,7 @@ import SignupPageLoader from "./components/PageLoaders/SignupPageLoader";
 
 import PrivateRoute from "./components/PrivateRoute";
 import SignupDetailsPageLoader from "./components/PageLoaders/SignupDetailsPageLoader";
+import ExplorePageLoader from "./components/PageLoaders/ExplorePageLoader";
 
 function App() {
   return (
@@ -34,7 +34,6 @@ function App() {
         <Route path="/signup" element={<SignupPageLoader />} exact />
         <Route path="/login" element={<LoginPageLoader />} exact />
         <Route path="/homepage" element={<HomePage />} />
-        <Route path="/explore" element={<ExplorePage />} />
         <Route path="/forgotpassword" element={<ForgotPasswordPageLoader />} />
         <Route element={<PrivateRoute />}>
           <Route path="/dashboard" element={<DashboardPageLoader />} exact />
@@ -50,6 +49,7 @@ function App() {
             exact
           />
         </Route>
+        <Route path="/explore" element={<ExplorePageLoader />} />
       </Routes>
     </div>
   );

@@ -1,11 +1,12 @@
 import React, { useRef, useState } from "react";
-import { Button, Card, Form } from "react-bootstrap";
+import { Alert, Button, Card, Form } from "react-bootstrap";
 import { db } from "../../firebase";
 import { useAuth } from "../../contexts/AuthContext";
 
 function IdentityEditor() {
   const { currentUser } = useAuth();
   const [gender, setGender] = useState("");
+  const [identityFeedback, setIdentityFeedback] = useState("");
   const firstnameRef = useRef();
   const lastnameRef = useRef();
   // const bioProfileRef = useRef();
@@ -29,6 +30,7 @@ function IdentityEditor() {
       gender: gender,
     });
     setLoading(false);
+    setIdentityFeedback("CHANGES SAVED!");
   }
 
   function handleRadio(event) {
@@ -102,6 +104,12 @@ function IdentityEditor() {
         <Button disabled={loading} type="submit">
           SUBMIT
         </Button>
+        <p />
+        {identityFeedback && (
+          <Alert>
+            <center>{identityFeedback}</center>
+          </Alert>
+        )}
       </Card>
     </Form>
   );
