@@ -8,7 +8,7 @@ import MainNavigation from "./components/layout/MainNavigation";
 import AboutUsPage from "./pages/AboutUsPage";
 import ExplorePage from "./pages/ExplorePage";
 import HomePage from "./pages/HomePage";
-import SignupDetailsPage from "./pages/SignupDetailsPage";
+// import SignupDetailsPage from "./pages/SignupDetailsPage";
 
 import DashboardPageLoader from "./components/PageLoaders/DashboardPageLoader";
 import EditProfilePageLoader from "./components/PageLoaders/EditProfilePageLoader";
@@ -18,6 +18,7 @@ import LoginPageLoader from "./components/PageLoaders/LoginPageLoader";
 import SignupPageLoader from "./components/PageLoaders/SignupPageLoader";
 
 import PrivateRoute from "./components/PrivateRoute";
+import SignupDetailsPageLoader from "./components/PageLoaders/SignupDetailsPageLoader";
 
 function App() {
   return (
@@ -43,7 +44,11 @@ function App() {
             exact
           />
           <Route path="/infopage" element={<InfoPageLoader />} exact />
-          <Route path="/signupdetails" element={<SignupDetailsPage />} exact />
+          <Route
+            path="/signupdetails"
+            element={<SignupDetailsPageLoader />}
+            exact
+          />
         </Route>
       </Routes>
     </div>

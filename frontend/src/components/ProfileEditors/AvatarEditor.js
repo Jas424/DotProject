@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { useAuth } from "../../contexts/AuthContext";
+import { db } from "../../firebase";
 
 //import online images
 let images = [
@@ -27,8 +28,9 @@ function AvatarEditor() {
     const url = await upload(photo, currentUser, setLoading);
     updateProfile(url);
     setPhotoURL(url);
-
-    console.log(currentUser.email, currentUser.photoURL);
+    db.collection("users").doc(currentUser.uid).update({
+      photoURL: url,
+    });
   }
 
   // using useEffect to control how many times we fetch data from API

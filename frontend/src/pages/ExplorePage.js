@@ -34,10 +34,26 @@ function ExplorePage() {
         {users.map((users) => (
           <Card>
             <div key={users.email}>
-              <h5>EMAIL: {users.email}</h5>
-              <p>HOMETOWN: {users.hometown}</p>
-              <p>OCCUPATION: {users.occupation}</p>
-              <img alt="avatar" src={users.photoURL}></img>
+              <Card.Header as="h5">
+                <center>
+                  {users.firstname} {users.lastname}
+                </center>
+              </Card.Header>
+              <Card.Body>
+                <p>AGE: {users.age}</p>
+                <p>GENDER: {users.gender} </p>
+                <p>LOCATION: {users.location}</p>
+                <p>LOOKING FOR: {users.seeking}</p>
+                <p>OCCUPATION: {users.occupation}</p>
+                <center>
+                  <img
+                    alt="avatar"
+                    src={users.photoURL}
+                    height="200px"
+                    width="200px"
+                  />
+                </center>
+              </Card.Body>
             </div>
           </Card>
         ))}

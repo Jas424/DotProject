@@ -24,8 +24,8 @@ function MainNavigation() {
     }
   }
 
-  //only render dashboard button if user is logged in
-  function showDashboardButtons() {
+  //only render certain buttons if user is logged in
+  function loggedInButtons() {
     if (currentUser) {
       return (
         <>
@@ -38,6 +38,9 @@ function MainNavigation() {
             <Link to="/explore">EXPLORE</Link>
           </li>
           <li>
+            <Link to="/signupdetails">PROFILE</Link>
+          </li>
+          <li>
             <Link to="/dashboard">DASHBOARD</Link>
           </li>
         </>
@@ -45,18 +48,24 @@ function MainNavigation() {
     }
   }
 
-  function showLogout() {
+  //only render certain buttons if user is logged out
+  function loggedOutButtons() {
     if (!currentUser) {
       return (
-        <li>
-          <Link to="/login">LOGIN</Link>
-        </li>
+        <>
+          <li>
+            <Link to="/login">LOGIN</Link>
+          </li>
+          <li>
+            <Link to="/signup">SIGN UP</Link>
+          </li>
+        </>
       );
     }
   }
 
   //show an Alert box when the user is logged in
-  function showLoginStatus() {
+  function loggedOutButtonsStatus() {
     if (currentUser) {
       return <Alert>STATUS: LOGGED IN</Alert>;
     }
@@ -75,22 +84,19 @@ function MainNavigation() {
           <font size="1">Dating App</font>
         </Link>
       </div>
-      <div>{showLoginStatus()}</div>
+      <div>{loggedOutButtonsStatus()}</div>
 
       <nav>
         <ul>
-          {/* only render dashboard and explore buttons if a user is logged in */}
-          {showDashboardButtons()}
+          {/* only render certain buttons if user is logged in */}
+          {loggedInButtons()}
 
           <li>
             <Link to="/aboutus">ABOUT US</Link>
           </li>
-          <li>
-            <Link to="/signup">SIGN UP</Link>
-          </li>
 
-          {/* only render Logout button if user is logged in */}
-          {showLogout()}
+          {/* only render certain buttons if user is not logged in */}
+          {loggedOutButtons()}
 
           <li>
             <Link to="/homepage">HOME PAGE</Link>
