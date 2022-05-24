@@ -136,6 +136,9 @@ h2 {
   padding: 1rem;
   width: 30rem;
   margin: 2.7rem;
+  margin:auto;
+  width: 100%;
+  height: 100%;
 }
 .card-title {
   color: #000000;
@@ -314,6 +317,8 @@ h2 {
   padding: 0 10px;
   font-weight: 600;
 }
+
+
 
 /* alternative button style
 .btn {
