@@ -1,43 +1,53 @@
 import React, { useRef, useState } from "react";
-import { Button, Card, Form } from "react-bootstrap";
+import { Alert, Button, Card, Form } from "react-bootstrap";
+import { db } from "../../firebase";
+import { useAuth } from "../../contexts/AuthContext";
 
 function BioCard() {
-  const bioRef = useRef();
-  const [editBio, setEditBio] = useState();
+  const { currentUser } = useAuth();
+  const yourMindRef = useRef();
+  const [loading, setLoading] = useState(false);
+  const [yourMindFeedback, setYourMindFeedback] = useState("");
 
-  const handleEdit = async (e) => {
+  function handleYourMindSubmit(e) {
     e.preventDefault();
-    setEditBio(!editBio);
-  };
+    setLoading(true);
+    db.collection("users").doc(currentUser.uid).update({
+      yourMind: yourMindRef.current.value,
+    });
+    setLoading(false);
+    setYourMindFeedback("CHANGES SAVED!");
+  }
 
   return (
     <Card>
       <Card.Header as="h3">
-        <center>BIO AND INTERESTS</center>
+        <center>WHAT'S ON YOUR MIND?</center>
       </Card.Header>
 
       <Card.Body>
-        <Form onSubmit={handleEdit}>
-          <Form.Group id="bio" controlId="formBio">
+        <Form onSubmit={handleYourMindSubmit}>
+          <Form.Group id="yourMind" controlId="formYourMind">
             {/* <Form.Label>
               <h4>MY STORY:</h4>
             </Form.Label> */}
-            <Form.Control
-              as="textarea"
-              rows={6}
-              placeholder="Please type a short introduction here."
-              ref={bioRef}
-            />
+            <Form.Control as="textarea" rows={6} ref={yourMindRef} />
             <p></p>
             <div className="d-grid gap-2">
               <Button
                 variant="primary"
-                onClick={handleEdit}
+                disabled={loading}
                 type="submit"
                 size="lg"
               >
                 SUBMIT
               </Button>
+              <p />
+              {yourMindFeedback && (
+                <Alert>
+                  <center>{yourMindFeedback}</center>
+                </Alert>
+              )}
             </div>
           </Form.Group>
         </Form>

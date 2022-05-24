@@ -61,6 +61,8 @@ function ExplorePage() {
                 <h5>LOCATION: {users.countryName}</h5>
                 <h5>LOOKING FOR: {users.lookingFor}</h5>
                 <h5>OCCUPATION: {users.job}</h5>
+                <p />
+                <h5>LAST SHOUTOUT: {users.yourMind}</h5>
                 <center>
                   <img
                     alt="avatar"
