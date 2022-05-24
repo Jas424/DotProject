@@ -19,11 +19,9 @@ function BioCard() {
       <Card.Body>
         <Form onSubmit={handleEdit}>
           <Form.Group id="bio" controlId="formBio">
-            <Form.Label>
-              <h3 className="text-center mb-4">
-                <center>MY STORY:</center>
-              </h3>
-            </Form.Label>
+            {/* <Form.Label>
+              <h4>MY STORY:</h4>
+            </Form.Label> */}
             <Form.Control
               as="textarea"
               rows={6}

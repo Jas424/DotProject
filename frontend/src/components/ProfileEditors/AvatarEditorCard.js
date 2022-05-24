@@ -8,7 +8,7 @@ let images = [
   "https://firebasestorage.googleapis.com/v0/b/dot-auth-dev.appspot.com/o/profile-photos%2FgenericPerson.png?alt=media&token=4d05e9f9-6125-4f40-92d0-999b33bd2fc7", //generic person image
 ];
 
-function AvatarEditor() {
+function AvatarEditorCard() {
   const [loading, setLoading] = useState(false);
   const [photo, setPhoto] = useState(null);
   const [avatarFeedback, setAvatarFeedback] = useState("");
@@ -56,7 +56,7 @@ function AvatarEditor() {
         {/* ACTUAL PROFILE PICTURE */}
         <Card.Body>
           <center>
-            <img alt="avatar" src={photoURL} height="200px" width="200px" />
+            <img alt="avatar" src={photoURL} height="200px" width="220px" />
           </center>
         </Card.Body>
 
@@ -87,4 +87,4 @@ function AvatarEditor() {
   );
 }
 
-export default AvatarEditor;
+export default AvatarEditorCard;

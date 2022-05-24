@@ -24,33 +24,41 @@ function MyProfileCard() {
   return (
     <>
       <div className="flexbox-container">
-        <Card>
-          <Card.Header as="h2">
-            <center>YOUR PROFILE CARD</center>
-          </Card.Header>
-          <Card.Body>
-            <h3>
-              <p>
-                <center>
-                  {userData.firstname} {userData.lastname}
-                </center>
-              </p>
-            </h3>
-            <p>AGE: {userData.age}</p>
-            <p>GENDER: {userData.gender} </p>
-            <p>LOCATION: {userData.location}</p>
-            <p>LOOKING FOR: {userData.seeking}</p>
-            <p>OCCUPATION: {userData.occupation}</p>
-            <center>
-              <img
-                alt="avatar"
-                src={userData.photoURL}
-                height="200px"
-                width="200px"
-              />
-            </center>
-          </Card.Body>
-        </Card>
+        <div className="card1">
+          <Card>
+            <Card.Header as="h2">
+              <center>YOUR PROFILE CARD</center>
+            </Card.Header>
+            <Card.Body>
+              <h3>
+                <p>
+                  <center>
+                    {userData.firstname} {userData.lastname}
+                  </center>
+                </p>
+              </h3>
+              <p>AGE: {userData.age}</p>
+              <p>GENDER: {userData.gender} </p>
+              <p>LOCATION: {userData.location}</p>
+              <p>LOOKING FOR: {userData.seeking}</p>
+              <p>OCCUPATION: {userData.occupation}</p>
+              {/* <center>
+                <img
+                  alt="avatar"
+                  src={userData.photoURL}
+                  height="200px"
+                  width="200px"
+                />
+              </center> */}
+            </Card.Body>
+            <Card.Img
+              variant="bottom"
+              src={userData.photoURL}
+              height="300px"
+              width="270px"
+            />
+          </Card>
+        </div>
       </div>
     </>
   );

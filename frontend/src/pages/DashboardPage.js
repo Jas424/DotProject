@@ -1,11 +1,12 @@
 import React from "react";
 import { AuthProvider, useAuth } from "../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import AvatarEditor from "../components/ProfileEditors/AvatarEditor";
+import AvatarEditor from "../components/ProfileEditors/AvatarEditorCard";
 import BioCard from "../components/ProfileEditors/BioCard";
 import AccountEditorCard from "../components/ProfileEditors/AccountEditorCard.js";
 import WelcomeCard from "../components/ProfileEditors/WelcomeCard";
 import MyProfileCard from "../components/ProfileEditors/MyProfileCard";
+import AvatarEditorCard from "../components/ProfileEditors/AvatarEditorCard";
 
 function DashboardPage() {
   const { logout } = useAuth();
@@ -39,7 +40,7 @@ function DashboardPage() {
 
             {/* AVATAR CARD */}
             <div>
-              <AvatarEditor />
+              <AvatarEditorCard />
             </div>
 
             {/* BIO AND INTERESTS CARD */}
