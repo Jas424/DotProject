@@ -13,9 +13,6 @@
   padding: auto;
   text-shadow: 0 5px 5px rgba(0, 0, 0, 0.202);
   font-family: "Merriweather";
-  border-bottom: 5px solid rgba(56, 107, 184, 0.852);
- 
-
 }
 
 .header ul {
@@ -46,7 +43,6 @@ header a {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  border-radius: 1rem;
   /*font-family: 'Catamaran', sans-serif;*/
 }
 
