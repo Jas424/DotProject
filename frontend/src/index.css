@@ -102,6 +102,8 @@ h2 {
   text-align: center;
   box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.164);
   font-family: "Merriweather", serif;
+
+  
 }
 
 .btn-signup {
@@ -139,12 +141,24 @@ h2 {
   margin:auto;
   width: 100%;
   height: 100%;
+  border-radius: 15%;
 }
+
+.card-header:first-child {
+  box-shadow: 0 2px 2px #00000029;
+  border-radius: 15%;
+  background-color: rgb(108, 117, 125)!important;
+  
+}
+
+
 .card-title {
-  color: #000000;
+  color: #ffffff;
 }
 .card-text {
   color: #000000;
+  text-shadow: 0px .5px .5px #00000068;
+  
 }
 
 .card1 {
