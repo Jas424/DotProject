@@ -1,6 +1,5 @@
 import React from "react";
 import { AuthProvider } from "../contexts/AuthContext";
-import AvatarEditorCard from "../components/ProfileEditors/AvatarEditorCard";
 import BioCard from "../components/ProfileEditors/BioCard";
 import AccountEditorCard from "../components/ProfileEditors/AccountEditorCard.js";
 import WelcomeCard from "../components/ProfileEditors/WelcomeCard";
@@ -20,11 +19,6 @@ function DashboardPage() {
             {/* WELCOME CARD */}
             <div>
               <WelcomeCard />
-            </div>
-
-            {/* AVATAR CARD */}
-            <div>
-              <AvatarEditorCard />
             </div>
 
             {/* BIO AND INTERESTS CARD */}
