@@ -36,11 +36,16 @@ function MyProfileCard() {
                 </p>
               </h3>
               <div className="myProfileCardBody">
-                <h5>AGE: {userData.age}</h5>
+                {/* <h5>AGE: {userData.age}</h5>
                 <h5>GENDER: {userData.gender} </h5>
                 <h5>LOCATION: {userData.countryName}</h5>
                 <h5>LOOKING FOR: {userData.lookingFor}</h5>
-                <h5>OCCUPATION: {userData.job}</h5>
+                <h5>OCCUPATION: {userData.job}</h5> */}
+                <p> AGE: {userData.age}</p>
+                <p>GENDER: {userData.gender}</p>
+                <p>LOCATION: {userData.countryName}</p>
+                <p>LOOKING FOR: {userData.lookingFor}</p>
+                <p>OCCUPATION: {userData.job}</p>
               </div>
             </Card.Body>
             <Card.Img

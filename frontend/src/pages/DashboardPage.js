@@ -16,21 +16,21 @@ function DashboardPage() {
               <AccountEditorCard />
             </div>
 
-            {/* WELCOME CARD */}
-            <div>
-              <WelcomeCard />
-            </div>
-
-            {/* BIO AND INTERESTS CARD */}
-            <div className="bg-image hover-zoom" style={{ maxWidth: "22rem" }}>
-              <BioCard />
-            </div>
+            {/* MY PROFILE CARD */}
+            <MyProfileCard />
           </div>
         </div>
 
         <div className="child2">
-          {/* MY PROFILE CARD */}
-          <MyProfileCard />
+          {/* WELCOME CARD */}
+          <div>
+            <WelcomeCard />
+          </div>
+
+          {/* BIO AND INTERESTS CARD */}
+          <div className="bg-image hover-zoom" style={{ maxWidth: "22rem" }}>
+            <BioCard />
+          </div>
         </div>
       </div>
     </AuthProvider>

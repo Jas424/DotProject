@@ -275,6 +275,16 @@ h2 {
   left: calc(50% - 15rem);
 }
 
+.myProfileCardBody {
+  font-family: "Merriweather", serif;
+  border: black, 2px, dotted;
+}
+
+.myProfileCardBody p {
+  font-family: "Merriweather", serif;
+  font-size: 20px;
+}
+
 .photoContainer {
   display: block;
   margin-left: auto;
