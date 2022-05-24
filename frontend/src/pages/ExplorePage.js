@@ -44,15 +44,23 @@ function ExplorePage() {
                 </center>
               </Card.Header>
               <Card.Body>
+                <p />
+                <p />
+                <p />
+
                 <h5>
-                  <center>
-                    AGE: {users.age} &nbsp; &nbsp; &nbsp; GENDER: {users.gender}
-                  </center>
+                  EMAIL: &nbsp; &nbsp;{" "}
+                  <a href={`mailto:${users.email}`}>{users.email}</a>
                 </h5>
-                <p></p>
+
+                <p />
+                <p />
+
+                <h5>AGE: {users.age}</h5>
+                <h5>GENDER: {users.gender}</h5>
                 <h5>LOCATION: {users.countryName}</h5>
-                <h5>LOOKING FOR: {users.seeking}</h5>
-                <h5>OCCUPATION: {users.occupation}</h5>
+                <h5>LOOKING FOR: {users.lookingFor}</h5>
+                <h5>OCCUPATION: {users.job}</h5>
                 <center>
                   <img
                     alt="avatar"

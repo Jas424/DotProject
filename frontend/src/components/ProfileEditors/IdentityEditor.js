@@ -12,6 +12,7 @@ function IdentityEditor() {
   const ageRef = useRef();
   const genderRef = useRef();
   const ethnicityRef = useRef();
+  const jobRef = useRef();
 
   const [loading, setLoading] = useState(false);
 
@@ -23,6 +24,7 @@ function IdentityEditor() {
       lastname: lastnameRef.current.value,
       age: ageRef.current.value,
       ethnicity: ethnicityRef.current.value,
+      job: jobRef.current.value,
       gender: gender,
     });
     setLoading(false);
@@ -41,22 +43,27 @@ function IdentityEditor() {
         </Card.Header>
         <Form.Group id="firstname" controlId="formFirstname">
           <Form.Label>WHAT IS YOUR FIRST NAME?</Form.Label>
-          <Form.Control type="text" ref={firstnameRef} required />
+          <Form.Control type="text" ref={firstnameRef} />
         </Form.Group>
 
         <Form.Group id="lastname" controlId="formLastname">
           <Form.Label>WHAT IS YOUR LAST NAME?</Form.Label>
-          <Form.Control type="text" ref={lastnameRef} required />
+          <Form.Control type="text" ref={lastnameRef} />
         </Form.Group>
 
         <Form.Group id="age" controlId="formAge">
           <Form.Label>HOW OLD ARE YOU?</Form.Label>
-          <Form.Control type="text" ref={ageRef} required />
+          <Form.Control type="text" ref={ageRef} />
         </Form.Group>
 
         <Form.Group id="ethnicity" controlId="formEthnicity">
           <Form.Label>WHAT IS YOUR ETHNICITY?</Form.Label>
           <Form.Control type="text" ref={ethnicityRef} />
+        </Form.Group>
+
+        <Form.Group id="job" controlId="formJob">
+          <Form.Label>WHAT DO YOU DO FOR A LIVING?</Form.Label>
+          <Form.Control type="text" ref={jobRef} />
         </Form.Group>
 
         <p />
